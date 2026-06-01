@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lujos y Accesorios | Repuestos para Camiones en Bogotá</title>
+    <meta name="description" content="Especialistas en repuestos y accesorios originales para camiones Chevrolet, JAC, Foton y JMC en Bogotá. Más de 10 años de experiencia. Envíos a todo Colombia.">
+    <meta name="keywords" content="repuestos camiones, accesorios camiones, Chevrolet, JAC, Foton, JMC, Bogotá, Colombia">
+    <meta name="author" content="Lujos y Accesorios">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Lujos y Accesorios | Repuestos para Camiones">
+    <meta property="og:description" content="Especialistas en repuestos originales para camiones. Cotiza fácil por WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lujosyaccesorios.com">
+    <meta property="og:image" content="https://lujosyaccesorios.com/img/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Skip link accesibilidad -->
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo" onclick="volverInicio(); return false;">
+                <span class="logo-icon">🚛</span>
+                <div class="logo-text">
+                    <strong>Lujos y Accesorios</strong>
+                    <small>Repuestos para Camiones</small>
+                </div>
+            </a>
+            <div class="header-actions">
+                <a href="tel:+573124692806" class="btn-phone">
+                    <span>📞</span>
+                    <div>
+                        <small>Llámanos</small>
+                        <strong>312 469 2806</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="contenido">
+        <!-- HERO SECTION -->
+        <section class="hero" id="inicio">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>Lujos y Accesorios para Camiones</h1>
+                <div class="hero-line"></div>
+                <p class="hero-subtitle">
+                    Especialistas en piezas originales y de alta calidad para 
+                    <strong>Chevrolet, JAC, Foton y JMC</strong>. Más de 10 años brindando 
+                    soluciones confiables para tu flota en Bogotá y toda Colombia.
+                </p>
+                <div class="hero-badges">
+                    <span class="badge">✓ Envíos Nacionales</span>
+                    <span class="badge">✓ Garantía de Calidad</span>
+                    <span class="badge">✓ Atención Personalizada</span>
+                </div>
+                <button class="btn-primary" onclick="scrollToMarcas()">
+                    Ver Catálogo de Repuestos
+                    <span>↓</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- MARCAS SECTION -->
+        <section class="marcas-section" id="marcas">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Selecciona tu Marca</h2>
+                    <p>Elige el fabricante de tu camión para configurar tu cotización</p>
+                </div>
+                
+                <div class="grid-marcas">
+                    <article class="marca-card" onclick="seleccionarMarca('Chevrolet')" data-marca="Chevrolet">
+                        <div class="marca-image">
+                            <img src="img/marcas/chevrolet.jpg" alt="Camiones Chevrolet - Repuestos NHR NPR NQR" loading="lazy">
+                            <div class="marca-overlay">
+                                <span>Ver repuestos <i>→</i></span>
+                            </div>
+                        </div>
+                        <div class="marca-info">
+                            <h3>Chevrolet</h3>
+                            <div class="modelos-tags">
+                                <span>NHR</span>
+                                <span>NPR</span>
+                                <span>NQR</span>
+                                <span>NKR</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="marca-card" onclick="seleccionarMarca('JAC')" data-marca="JAC">
+                        <div class="marca-image">
+                            <img src="img/marcas/jac.jpg" alt="Camiones JAC - Repuestos JRR JHR" loading="lazy">
+                            <div class="marca-overlay">
+                                <span>Ver repuestos <i>→</i></span>
+                            </div>
+                        </div>
+                        <div class="marca-info">
+                            <h3>JAC</h3>
+                            <div class="modelos-tags">
+                                <span>JRR</span>
+                                <span>JHR Power</span>
+                                <span>JHR Power+</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="marca-card" onclick="seleccionarMarca('Foton')" data-marca="Foton">
+                        <div class="marca-image">
+                            <img src="img/marcas/foton.jpg" alt="Camiones Foton - Repuestos FHR FQR FRR" loading="lazy">
+                            <div class="marca-overlay">
+                                <span>Ver repuestos <i>→</i></span>
+                            </div>
+                        </div>
+                        <div class="marca-info">
+                            <h3>Foton</h3>
+                            <div class="modelos-tags">
+                                <span>FHR</span>
+                                <span>FQR</span>
+                                <span>FRR</span>
+                                <span>Aumark</span>
+                                <span>Ollin</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="marca-card" onclick="seleccionarMarca('JMC')" data-marca="JMC">
+                        <div class="marca-image">
+                            <img src="img/marcas/jmc.jpg" alt="Camiones JMC - Repuestos CHR CKR CQR" loading="lazy">
+                            <div class="marca-overlay">
+                                <span>Ver repuestos <i>→</i></span>
+                            </div>
+                        </div>
+                        <div class="marca-info">
+                            <h3>JMC</h3>
+                            <div class="modelos-tags">
+                                <span>CHR</span>
+                                <span>CKR</span>
+                                <span>CQR</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIGURADOR SECTION -->
+        <section class="configurador" id="configurador" style="display: none;">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <button class="btn-back" onclick="volverAMarcas()">
+                        <span>←</span>
+                        <span>Volver a marcas</span>
+                    </button>
+                    <span class="separator">/</span>
+                    <span class="current" id="breadcrumbText">Configurar cotización</span>
+                </nav>
+
+                <!-- Info Marca -->
+                <div class="info-card">
+                    <div class="info-icon">🏷️</div>
+                    <div class="info-content">
+                        <label>Marca seleccionada</label>
+                        <strong id="marcaDisplay">-</strong>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="modeloSelect">
+                            <span class="label-icon">🚚</span>
+                            Modelo del Camión
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="modeloSelect">
+                                <option value="">Selecciona el modelo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="anioSelect">
+                            <span class="label-icon">📅</span>
+                            Año del Vehículo
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="anioSelect">
+                                <option value="">Selecciona el año</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repuestos -->
+                <div class="repuestos-section">
+                    <h3>
+                        <span>🔧</span>
+                        Repuestos Disponibles
+                    </h3>
+                    <div class="repuestos-grid" id="repuestosContainer">
+                        <!-- Se genera con JS -->
+                    </div>
+                </div>
+
+                <!-- Resumen -->
+                <div class="resumen-card">
+                    <div class="resumen-header">
+                        <h3>
+                            <span>📋</span>
+                            Tu Cotización
+                        </h3>
+                        <span class="contador" id="contadorItems">0 items</span>
+                    </div>
+                    
+                    <div class="resumen-lista" id="listaResumen">
+                        <p class="empty-state">Selecciona los repuestos que necesitas arriba...</p>
+                    </div>
+
+                    <div class="resumen-actions">
+                        <button class="btn-whatsapp" id="btnEnviar" onclick="enviarCotizacion()">
+                            <span class="icon">💬</span>
+                            <span class="text">
+                                <strong>Enviar por WhatsApp</strong>
+                                <small>Cotización gratuita</small>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="ubicacion-section">
+                    <h3>📍 Nuestra Ubicación</h3>
+                    <div class="mapa-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.1234567890123!2d-74.12345678901234!3d4.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDcnMjQuNCJOIDc0wrAwNycyNC40Ilc!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco"
+                            width="100%" 
+                            height="350" 
+                            style="border:0; border-radius: 16px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de Lujos y Accesorios en Bogotá">
+                        </iframe>
+                        <div class="mapa-info">
+                            <strong>Calle 6A #17-59</strong>
+                            <span>Bogotá, Colombia</span>
+                            <a href="https://maps.google.com/?q=Calle+6A+%2317-59+Bogotá+Colombia" target="_blank" class="btn-maps">Cómo llegar →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFO ADICIONAL -->
+        <section class="info-section">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon-large">🚛</div>
+                        <h4>Amplio Inventario</h4>
+                        <p>Tenemos la pieza que buscas para tu camión, desde modelos clásicos hasta los más modernos.</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon-large">⚡</div>
+                        <h4>Entrega Rápida</h4>
+                        <p>Envíos en Bogotá y despacho inmediato a nivel nacional.</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon-large">🛡️</div>
+                        <h4>Garantía de alta calidad</h4>
+                        <p>Todas nuestras piezas cuentan con garantía de calidad directo de la fábrica.</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon-large">💬</div>
+                        <h4>Asesoría Experta</h4>
+                        <p>Te ayudamos a identificar exactamente qué repuesto necesitas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-footer">
+                        <span>🚛</span>
+                        <strong>Lujos y Accesorios</strong>
+                    </div>
+                    <p>Especialistas en repuestos y accesorios para camiones livianos y pesados. Más de una década brindando soluciones de calidad.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Marcas</h4>
+                    <ul>
+                        <li><a href="#marcas" onclick="seleccionarMarca('Chevrolet')">Chevrolet</a></li>
+                        <li><a href="#marcas" onclick="seleccionarMarca('JAC')">JAC</a></li>
+                        <li><a href="#marcas" onclick="seleccionarMarca('Foton')">Foton</a></li>
+                        <li><a href="#marcas" onclick="seleccionarMarca('JMC')">JMC</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>📍 Calle 6A #17-59, Bogotá</li>
+                        <li>📞 <a href="tel:+573124692806">+57 312 469 2806</a></li>
+                        <li>✉️ <a href="mailto:info@lujosyaccesorios.com">info@lujosyaccesorios.com</a></li>
+                        <li>🕐 Lun-Vie: 8am-6pm, Sáb: 8am-1pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lujos y Accesorios. Todos los derechos reservados.</p>
+                <p>Hecho con ❤️ en Bogotá, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/573124692806?text=Hola,%20me%20interesa%20cotizar%20repuestos%20para%20mi%20camión" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32">
+        <span class="whatsapp-tooltip">¿Necesitas ayuda? Escríbenos</span>
+    </a>
+
+    <!-- Notificaciones -->
+    <div class="notificacion" id="notificacion" role="alert" aria-live="polite">
+        <span class="notificacion-icon" id="notifIcon">✓</span>
+        <span class="notificacion-text" id="notifText">Mensaje</span>
+    </div>
+
+    <!-- ANIMACIÓN DEL CAMIÓN -->
+    <div id="animacionCamion" class="animacion-camion">
+        <img id="camionAnimado" src="" alt="Camión">
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
