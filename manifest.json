@@ -1,0 +1,29 @@
+{
+  "name": "Lujos y Accesorios - Repuestos para Camiones",
+  "short_name": "Lujos y Accesorios",
+  "description": "Repuestos y accesorios para camiones Chevrolet, JAC, Foton y JMC en Bogotá",
+  "id": ".",
+  "start_url": ".",
+  "scope": ".",
+  "lang": "es-CO",
+  "dir": "ltr",
+  "display": "standalone",
+  "background_color": "#0b1f3a",
+  "theme_color": "#c4161c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "automotive"]
+}

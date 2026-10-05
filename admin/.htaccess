@@ -1,0 +1,11 @@
+# ============================================
+# Proteccion del panel de administracion
+# Bloquea acceso directo a archivos sensibles
+# ============================================
+
+<FilesMatch "^(config\.php|lib\.php|repuestos-extra\.json)$">
+    Require all denied
+</FilesMatch>
+
+# Bloquear listado de carpetas
+Options -Indexes

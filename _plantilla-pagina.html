@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITULO}}</title>
+<meta name="description" content="{{DESCRIPCION}}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="{{URL}}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Lujos y Accesorios">
+<meta property="og:title" content="{{TITULO}}">
+<meta property="og:description" content="{{DESCRIPCION}}">
+<meta property="og:url" content="{{URL}}">
+<meta property="og:image" content="{{SITIO}}/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITULO}}">
+<meta name="twitter:description" content="{{DESCRIPCION}}">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://wa.me; base-uri 'self'; form-action 'self' https://wa.me; object-src 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#c4161c">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{REL}}img/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{REL}}img/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{REL}}img/apple-touch-icon.png">
+    <link rel="manifest" href="{{REL}}manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{REL}}css/styles.css">
+<link rel="stylesheet" href="{{REL}}css/paginas.css">
+{{JSONLD}}
+</head>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+<header>
+  <div class="header-content">
+    <a class="logo" href="{{SITIO}}/" aria-label="Lujos y Accesorios, ir al inicio">
+      <span class="logo-icon" aria-hidden="true">&#128666;</span>
+      <span class="logo-text"><strong>Lujos y</strong><span class="logo-title-ola"><span class="logo-letter">Accesorios</span></span></span>
+    </a>
+    <nav class="nav-principal" aria-label="Navegacion principal">
+      <ul>
+        <li><a class="nav-link" href="{{REL}}index.html#inicio">Inicio</a></li>
+                    <li><a class="nav-link" href="{{REL}}index.html#recomendados">Productos</a></li>
+                    <li><a class="nav-link" href="{{REL}}index.html#catalogo-pdf">Catalogo PDF</a></li>
+                    <li><a class="nav-link" href="{{REL}}index.html#marcas">Marcas</a></li>
+        <li><a class="nav-link" href="{{REL}}index.html#configurador" data-abrir-configurador="true">Cotizador</a></li>
+        <li><a class="nav-link" href="{{REL}}index.html#trabajos">Trabajos</a></li>
+        <li><a class="nav-link" href="{{REL}}index.html#resultados">Antes y Despues</a></li>
+        <li><a class="nav-link" href="{{REL}}index.html#testimonios">Resenas</a></li>
+        <li><a class="nav-link" href="{{REL}}index.html#faq">FAQ</a></li>
+        <li><a class="nav-link" href="{{REL}}index.html#ubicacion">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn-wa-header" href="{{WA_GENERAL}}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">&#128241;</span><span>WhatsApp</span></a>
+    </div>
+  </div>
+</header>
+<main id="contenido">
+  <section class="pagina-interna">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Ruta de navegacion">
+        <ol>{{MIGAS}}</ol>
+      </nav>
+      <div class="pagina-header">
+        <h1>{{H1}}</h1>
+        <p class="pagina-intro">{{INTRO}}</p>
+        <div class="pagina-acciones">
+          <a class="btn-foto-wa" href="{{WA_CTX}}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">&#128241;</span> COTIZAR POR WHATSAPP</a>
+          <a class="btn-hero" href="{{REL}}index.html#configurador" data-abrir-configurador="true"><span aria-hidden="true">&#128295;</span> USAR EL COTIZADOR</a>
+        </div>
+      </div>
+{{EXTRA}}
+      <section class="mapa-section">
+        <div class="mapa-grid">
+          <div class="mapa-embed">
+            <iframe src="https://www.google.com/maps?q={{MAPS}}&amp;z=17&amp;hl=es&amp;output=embed" width="100%" height="400" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicacion de Lujos y Accesorios"></iframe>
+          </div>
+          <div class="mapa-datos">
+            <h3>Lujos y Accesorios</h3>
+            <div class="mapa-fila">
+              <span class="mapa-fila-icono" aria-hidden="true">&#128205;</span>
+              <span>{{DIRECCION}}, {{PAIS}}</span>
+            </div>
+            <div class="mapa-fila">
+              <span class="mapa-fila-icono" aria-hidden="true">&#128222;</span>
+              <a href="tel:{{TELEFONO}}">{{TELEFONO}}</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-footer"><span>&#128666;</span><strong>Lujos y Accesorios</strong></div>
+        <p>Repuestos y accesorios para camiones Chevrolet, JAC, Foton y JMC. Atencion en Bogota y envios a toda Colombia.</p>
+        <div class="social-links">
+          <a href="https://www.tiktok.com/@lujosyaccesorioscamiones" target="_blank" rel="noopener noreferrer" aria-label="TikTok">&#127925;</a>
+          <a href="https://www.instagram.com/lujosyaccesorioscamiones" target="_blank" rel="noopener noreferrer" aria-label="Instagram">&#128247;</a>
+          <a href="https://www.youtube.com/@lujosyaccesorios-z1p" target="_blank" rel="noopener noreferrer" aria-label="YouTube">&#9654;&#65039;</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Marcas</h4>
+        <ul>{{NAV_MARCAS}}</ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contacto</h4>
+        <ul>
+          <li>&#128205; {{DIRECCION}}, {{PAIS}}</li>
+          <li>&#128222; <a href="tel:{{TELEFONO}}">{{TELEFONO}}</a></li>
+          <li><a href="{{WA_GENERAL}}" target="_blank" rel="noopener noreferrer">&#128241; WhatsApp</a></li>
+          <li><a href="https://maps.app.goo.gl/6jB4HeUk5NPbDvGt6" target="_blank" rel="noopener noreferrer">&#128205; Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <a href="{{LEGAL_PRIVACIDAD}}">Politica de Privacidad</a>
+      <span aria-hidden="true">&middot;</span>
+      <a href="{{LEGAL_COOKIES}}">Politica de Cookies</a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ANIO}} Lujos y Accesorios. Todos los derechos reservados.</p>
+      <p class="footer-credito">Creado por Andrés Felipe</p>
+    </div>
+  </div>
+</footer>
+<script>
+  // Tracking ligero de los CTA de las paginas internas.
+  // No se carga app.js aqui porque estas paginas son solo contenido estatico.
+  (function () {
+    function enviar(nombre, etiqueta) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', nombre, { evento_tipo: 'click', etiqueta: etiqueta });
+      }
+    }
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest ? ev.target.closest('a[href]') : null;
+      if (!a) { return; }
+      var href = a.getAttribute('href') || '';
+      if (href.indexOf('wa.me') === 0) { enviar('envio_foto_whatsapp', '{{CTX}}'); }
+      else if (href.indexOf('tel:') === 0) { enviar('click_llamada', '{{CTX}}'); }
+      else if (a.target === '_blank') { enviar('salida_enlace_externo', href); }
+    });
+  })();
+</script>
+</body>
+</html>

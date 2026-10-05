@@ -3,80 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lujos y Accesorios | Repuestos para Camiones en Bogotá</title>
-    <meta name="description" content="Especialistas en repuestos y accesorios originales para camiones Chevrolet, JAC, Foton y JMC en Bogotá. Más de 10 años de experiencia. Envíos a todo Colombia.">
-    <meta name="keywords" content="repuestos camiones, accesorios camiones, Chevrolet, JAC, Foton, JMC, Bogotá, Colombia">
+    <title>Repuestos y Accesorios para Camiones en Bogotá | Lujos y Accesorios</title>
+    <meta name="description" content="Repuestos, lujos y accesorios para camiones Chevrolet, JAC, Foton y JMC en Bogotá. Cotiza por WhatsApp o envía foto de tu pieza. Envíos a toda Colombia.">
     <meta name="author" content="Lujos y Accesorios">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph para redes sociales -->
-    <meta property="og:title" content="Lujos y Accesorios | Repuestos para Camiones">
-    <meta property="og:description" content="Especialistas en repuestos originales para camiones. Cotiza fácil por WhatsApp.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://felipesis11.github.io/Lujos-Y-Accesorios/">
+
+    <!-- Security Headers (solo directivas válidas en meta) -->
+    <!--
+      CSP
+      TikTok: el embed oficial (embed.js) redirige a su CDN real
+      (sf16-website-login.neutral.ttwstatic.com), asi que se permite *.ttwstatic.com
+      ademas de www.tiktok.com.
+      worker-src 'self' es obligatorio para registrar sw.js: sin el, child-src
+      se usaba como fallback y el Service Worker era bloqueado.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://fonts.googleapis.com https://www.tiktok.com https://*.ttwstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.ttwstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://wa.me https://maps.google.com https://www.google.com/maps https://www.tiktok.com https://*.ttwstatic.com; frame-src https://www.tiktok.com https://www.google.com https://*.tiktokcdn.com; child-src https://www.tiktok.com; worker-src 'self'; base-uri 'self'; form-action 'self' https://wa.me; object-src 'none';">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="Lujos y Accesorios">
+    <meta property="og:title" content="Repuestos y Accesorios para Camiones en Bogotá | Lujos y Accesorios">
+    <meta property="og:description" content="Repuestos, lujos y accesorios para camiones Chevrolet, JAC, Foton y JMC en Bogotá. Cotiza por WhatsApp. Envíos a toda Colombia.">
     <meta property="og:url" content="https://felipesis11.github.io/Lujos-Y-Accesorios/">
-    <meta property="og:image" content="https://lujosyaccesorios.com/img/og-image.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    
-    <!-- Preconnect para performance -->
+    <meta property="og:image" content="https://felipesis11.github.io/Lujos-Y-Accesorios/img/og-image.jpg">
+    <meta property="og:image:alt" content="Lujos y Accesorios - Repuestos y accesorios para camiones en Bogotá">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Repuestos y Accesorios para Camiones en Bogotá">
+    <meta name="twitter:description" content="Repuestos para camiones Chevrolet, JAC, Foton y JMC. Cotiza por WhatsApp. Envíos a toda Colombia.">
+    <meta name="twitter:image" content="https://felipesis11.github.io/Lujos-Y-Accesorios/img/og-image.jpg">
+    <meta name="twitter:image:alt" content="Lujos y Accesorios - Repuestos y accesorios para camiones en Bogotá">
+
+    <!-- Geo / SEO local -->
+    <meta name="geo.region" content="CO-DC">
+    <meta name="geo.placename" content="Bogotá">
+    <meta name="geo.position" content="">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#c4161c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Lujos y Accesorios">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- ============ DATOS ESTRUCTURADOS (JSON-LD) ============
+         Solo datos REALES confirmados por el negocio.
+         NO se inventan horarios, coordenadas, precios ni reseñas.
+         Tipo AutoPartsStore: es el tipo especifico de Schema.org para
+         una tienda de repuestos de vehiculos (subtipo de Store).
+    ============================================================ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "AutoPartsStore",
+          "@id": "https://felipesis11.github.io/Lujos-Y-Accesorios/#negocio",
+          "name": "Lujos y Accesorios",
+          "description": "Repuestos, lujos y accesorios para camiones Chevrolet, JAC, Foton y JMC. Atención en Bogotá y envíos a toda Colombia.",
+          "url": "https://felipesis11.github.io/Lujos-Y-Accesorios/",
+          "telephone": "+573124692806",
+          "image": "https://felipesis11.github.io/Lujos-Y-Accesorios/img/og-image.jpg",
+          "hasMap": "https://maps.app.goo.gl/6jB4HeUk5NPbDvGt6",
+          "sameAs": [
+            "https://www.tiktok.com/@lujosyaccesorioscamiones",
+            "https://www.instagram.com/lujosyaccesorioscamiones",
+            "https://www.youtube.com/@lujosyaccesorios-z1p"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calle 6A #17-59",
+            "addressLocality": "Bogotá",
+            "addressRegion": "Bogotá D.C.",
+            "addressCountry": "CO"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Bogotá" },
+            { "@type": "Country", "name": "Colombia" }
+          ],
+          "knowsAbout": [
+            "Repuestos para camiones",
+            "Accesorios para camiones",
+            "Bómperes para camiones",
+            "Farolas para camiones",
+            "Estribos para camiones",
+            "Persianas para camiones",
+            "Espejos para camiones",
+            "Guardabarros para camiones",
+            "Direccionales para camiones"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Catálogo de repuestos para camiones",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "Repuestos para camiones Chevrolet",
+                "url": "https://felipesis11.github.io/Lujos-Y-Accesorios/chevrolet/"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Repuestos para camiones JAC",
+                "url": "https://felipesis11.github.io/Lujos-Y-Accesorios/jac/"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Repuestos para camiones Foton",
+                "url": "https://felipesis11.github.io/Lujos-Y-Accesorios/foton/"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Repuestos para camiones JMC",
+                "url": "https://felipesis11.github.io/Lujos-Y-Accesorios/jmc/"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://felipesis11.github.io/Lujos-Y-Accesorios/#organizacion",
+          "name": "Lujos y Accesorios",
+          "url": "https://felipesis11.github.io/Lujos-Y-Accesorios/",
+          "logo": "https://felipesis11.github.io/Lujos-Y-Accesorios/img/icon-512.png",
+          "sameAs": [
+            "https://www.tiktok.com/@lujosyaccesorioscamiones",
+            "https://www.instagram.com/lujosyaccesorioscamiones",
+            "https://www.youtube.com/@lujosyaccesorios-z1p"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://felipesis11.github.io/Lujos-Y-Accesorios/#website",
+          "url": "https://felipesis11.github.io/Lujos-Y-Accesorios/",
+          "name": "Lujos y Accesorios",
+          "inLanguage": "es-CO",
+          "publisher": { "@id": "https://felipesis11.github.io/Lujos-Y-Accesorios/#organizacion" }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
-    <!-- Skip link accesibilidad -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('tema');
+                if (t === 'oscuro') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+            } catch (e) {}
+            // Marcar que JS está cargado para desactivar fallbacks CSS
+            document.documentElement.classList.add('js-loaded');
+        })();
+    </script>
+
+    <!-- BANNER DE COOKIES -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <p>🍪 Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra <a href="politica-privacidad/index.html">Política de Privacidad</a> y nuestra <a href="politica-cookies/index.html">Política de Cookies</a>.</p>
+            <div class="cookie-buttons">
+                <button class="btn-cookie-accept" onclick="aceptarCookies()">Aceptar</button>
+                <button class="btn-cookie-decline" onclick="rechazarCookies()">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
     <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
 
     <header>
         <div class="header-content">
-            <a href="#" class="logo" onclick="volverInicio(); return false;">
+            <a href="index.html#inicio" class="logo" data-seccion="inicio" data-nombre="Logo" onclick="volverInicio(); return false;">
                 <span class="logo-icon">🚛</span>
                 <div class="logo-text">
-                    <strong>Lujos y Accesorios</strong>
+                    <strong class="logo-title-ola"><span class="logo-letter" style="--i:0">L</span><span class="logo-letter" style="--i:1">u</span><span class="logo-letter" style="--i:2">j</span><span class="logo-letter" style="--i:3">o</span><span class="logo-letter" style="--i:4">s</span><span class="logo-letter logo-space" style="--i:5"></span><span class="logo-letter" style="--i:6">y</span><span class="logo-letter logo-space" style="--i:7"></span><span class="logo-letter logo-accent" style="--i:8">A</span><span class="logo-letter logo-accent" style="--i:9">c</span><span class="logo-letter logo-accent" style="--i:10">c</span><span class="logo-letter logo-accent" style="--i:11">e</span><span class="logo-letter logo-accent" style="--i:12">s</span><span class="logo-letter logo-accent" style="--i:13">o</span><span class="logo-letter logo-accent" style="--i:14">r</span><span class="logo-letter logo-accent" style="--i:15">i</span><span class="logo-letter logo-accent" style="--i:16">o</span><span class="logo-letter logo-accent" style="--i:17">s</span></strong>
                     <small>Repuestos para Camiones</small>
                 </div>
             </a>
+            <button class="btn-menu-movil" id="btnMenuMovil" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navPrincipal">
+                <span class="menu-icono-linea"></span>
+                <span class="menu-icono-linea"></span>
+                <span class="menu-icono-linea"></span>
+            </button>
+
+            <nav class="nav-principal" id="navPrincipal" aria-label="Navegación principal">
+                <ul>
+                <li><a href="#inicio" class="nav-link nav-link-activo" data-seccion="inicio" data-nombre="Inicio">Inicio</a></li>
+                    <li><a href="#recomendados" class="nav-link" data-seccion="recomendados" data-nombre="Productos">Productos</a></li>
+                    <li><a href="#catalogo-pdf" class="nav-link" data-seccion="catalogo-pdf" data-nombre="Catálogo PDF">Catálogo PDF</a></li>
+                    <li><a href="#marcas" class="nav-link" data-seccion="marcas" data-nombre="Marcas">Marcas</a></li>
+                <li><a href="#configurador" class="nav-link" data-seccion="configurador" data-nombre="Cotizador" data-requiere-configurador="true">Cotizador</a></li>
+                <li><a href="#trabajos" class="nav-link" data-seccion="trabajos" data-nombre="Trabajos">Trabajos</a></li>
+                <li><a href="#resultados" class="nav-link" data-seccion="resultados" data-nombre="Antes y Después">Antes y Después</a></li>
+                <li><a href="#testimonios" class="nav-link" data-seccion="testimonios" data-nombre="Reseñas">Reseñas</a></li>
+                <li><a href="#faq" class="nav-link" data-seccion="faq" data-nombre="FAQ">FAQ</a></li>
+                <li><a href="#ubicacion" class="nav-link" data-seccion="ubicacion" data-nombre="Contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
             <div class="header-actions">
-                <a href="tel:+573124692806" class="btn-phone">
-                    <span>📞</span>
-                    <div>
+                <button class="btn-tema" id="btnTema" onclick="toggleTema()" aria-label="Cambiar modo oscuro/claro">
+                    <span class="tema-icono" id="temaIcono">🌙</span>
+                </button>
+                <a href="https://wa.me/573124692806?text=Hola%2C%20quiero%20cotizar%20repuestos%20para%20mi%20camion"
+                   target="_blank" rel="noopener noreferrer" class="btn-wa-header" onclick="trackWhatsAppClick('header')" aria-label="Cotizar por WhatsApp">
+                    <span aria-hidden="true">📱</span>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="tel:+573124692806" class="btn-phone-truck" onclick="trackLlamadaClick()">
+                    <span class="phone-truck-icon">🚛</span>
+                    <span class="phone-truck-text">
                         <small>Llámanos</small>
                         <strong>312 469 2806</strong>
-                    </div>
+                    </span>
                 </a>
             </div>
         </div>
     </header>
 
     <main id="contenido">
-        <!-- HERO SECTION -->
         <section class="hero" id="inicio">
             <div class="hero-bg"></div>
-            <div class="hero-content">
-                <h1>Lujos y Accesorios para Camiones</h1>
-                <div class="hero-line"></div>
-                <p class="hero-subtitle">
-                    Especialistas en piezas originales y de alta calidad para 
-                    <strong>Chevrolet, JAC, Foton y JMC</strong>. Más de 10 años brindando 
-                    soluciones confiables para tu flota en Bogotá y toda Colombia.
-                </p>
-                <div class="hero-badges">
-                    <span class="badge">✓ Envíos Nacionales</span>
-                    <span class="badge">✓ Garantía de Calidad</span>
-                    <span class="badge">✓ Atención Personalizada</span>
+            <canvas id="particles-canvas"></canvas>
+            <div class="hero-depth-layer hero-depth-layer-1">🚛</div>
+            <div class="hero-depth-layer hero-depth-layer-2">⚙️</div>
+            <div class="hero-depth-layer hero-depth-layer-3">🔧</div>
+
+            <div class="hero-layout">
+                <div class="hero-texto">
+                    <div class="hero-titulo-wrapper">
+                        <span class="hero-sub-label">Lujos y Accesorios</span>
+                        <h1 class="hero-titulo">
+                            <span class="titulo-line titulo-line-sm">REPUESTOS Y ACCESORIOS</span>
+                            <span class="titulo-line titulo-y">PARA CAMIONES</span>
+                        </h1>
+                        <div class="hero-titulo-decor">
+                            <span class="decor-line"></span>
+                            <span class="decor-star">✦</span>
+                            <span class="decor-line"></span>
+                        </div>
+                        <p class="hero-subtitle">
+                            <strong>Accesorios, repuestos y soluciones para tu camión</strong> en
+                            <strong>Bogotá</strong>, con envíos a <strong>toda Colombia</strong>
+                        </p>
+                        <p class="hero-marcas-inline">
+                            <span>Chevrolet</span><span>JAC</span><span>Foton</span><span>JMC</span>
+                        </p>
+                    </div>
+
+                    <div class="hero-phone">
+                        <a href="tel:+573124692806" class="btn-phone-truck" onclick="trackLlamadaClick()">
+                            <span class="phone-truck-icon">🚛</span>
+                            <span class="phone-truck-text">
+                                <small>Llámanos</small>
+                                <strong>312 469 2806</strong>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <button class="btn-hero" onclick="Navegacion.desplazarA('recomendados')" aria-label="Ver productos destacados">
+                            <span aria-hidden="true">🛍️</span>
+                            VER PRODUCTOS
+                        </button>
+                        <a href="https://wa.me/573124692806?text=Hola%2C%20quiero%20cotizar%20repuestos%20para%20mi%20camion"
+                           target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-wa" onclick="trackWhatsAppClick('hero')"
+                           aria-label="Contactarnos por WhatsApp">
+                            <span aria-hidden="true">📱</span>
+                            WHATSAPP
+                        </a>
+                        <a href="https://maps.app.goo.gl/6jB4HeUk5NPbDvGt6"
+                           target="_blank" rel="noopener noreferrer" class="btn-hero" onclick="trackMapsClick()"
+                           aria-label="Cómo llegar a Lujos y Accesorios en Google Maps">
+                            <span aria-hidden="true">📍</span>
+                            CÓMO LLEGAR
+                        </a>
+                        <a href="https://www.instagram.com/lujosyaccesorioscamiones"
+                           target="_blank" rel="noopener noreferrer" class="btn-hero" onclick="trackSocialClick('instagram')"
+                           aria-label="Ver Instagram de Lujos y Accesorios">
+                            <span aria-hidden="true">📷</span>
+                            INSTAGRAM
+                        </a>
+                    </div>
+
+                    <div class="hero-badges">
+                        <span class="badge">✓ Envíos a toda Colombia</span>
+                        <span class="badge">✓ Asesoría para identificar tu pieza</span>
+                        <span class="badge">✓ Atención en Bogotá</span>
+                    </div>
                 </div>
-                <button class="btn-primary" onclick="scrollToMarcas()">
-                    Ver Catálogo de Repuestos
-                    <span>↓</span>
-                </button>
+
+                <div class="hero-imagen">
+                    <div class="hero-smoke">
+                        <div class="smoke-cloud cloud-1"></div>
+                        <div class="smoke-cloud cloud-2"></div>
+                        <div class="smoke-cloud cloud-3"></div>
+                    </div>
+                    <div class="hero-truck-container">
+                        <img src="img/hero/camion-hero.png" alt="Camión de carga en el taller de Lujos y Accesorios" class="hero-truck-img"
+                             fetchpriority="high" decoding="async"
+                             onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                        <div class="truck-placeholder">
+                            <span>🚛</span>
+                            <small>Coloca tu PNG aquí</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- MARCAS SECTION -->
+        <!-- ALGUNOS DE NUESTROS PRODUCTOS - SCROLL INFINITO -->
+        <section class="recomendados-section" id="recomendados">
+            <div class="container">
+                <div class="section-header recomendados-header">
+                    <h2>Productos destacados</h2>
+                    <p>Conoce algunos de nuestros repuestos y accesorios para camiones</p>
+                </div>
+            </div>
+            <div class="recomendados-marquee" aria-label="Productos recomendados">
+                <div class="recomendados-track" id="recomendadosTrack"></div>
+            </div>
+            <div class="container">
+                <p class="recomendados-nota">Haz clic en un producto para ver su configuración →</p>
+            </div>
+        </section>
+
         <section class="marcas-section" id="marcas">
             <div class="container">
                 <div class="section-header">
@@ -84,64 +353,65 @@
                     <p>Elige el fabricante de tu camión para configurar tu cotización</p>
                 </div>
                 
-                <div class="grid-marcas">
-                    <article class="marca-card" onclick="seleccionarMarca('Chevrolet')" data-marca="Chevrolet">
+                <div class="grid-marcas" role="list" aria-label="Marcas de camiones disponibles">
+                    <article class="marca-card" role="listitem" tabindex="0" onclick="seleccionarMarca('Chevrolet')" onkeydown="event.key==='Enter'&&seleccionarMarca('Chevrolet')" data-marca="Chevrolet" aria-label="Chevrolet - Modelos NHR, NPR, NQR, NKR, FRR">
                         <div class="marca-image">
-                            <img src="img/marcas/chevrolet.jpg" alt="Camiones Chevrolet - Repuestos NHR NPR NQR" loading="lazy">
+                            <img src="img/marcas/chevrolet.jpg" alt="Camiones Chevrolet - Repuestos para NHR, NPR, NQR, NKR, FRR" loading="lazy">
                             <div class="marca-overlay">
                                 <span>Ver repuestos <i>→</i></span>
                             </div>
                         </div>
                         <div class="marca-info">
                             <h3>Chevrolet</h3>
-                            <div class="modelos-tags">
+                            <div class="modelos-tags" aria-label="Modelos disponibles">
                                 <span>NHR</span>
                                 <span>NPR</span>
                                 <span>NQR</span>
                                 <span>NKR</span>
+                                <span>FRR</span>
                             </div>
                         </div>
                     </article>
 
-                    <article class="marca-card" onclick="seleccionarMarca('JAC')" data-marca="JAC">
+                    <article class="marca-card" role="listitem" tabindex="0" onclick="seleccionarMarca('JAC')" onkeydown="event.key==='Enter'&&seleccionarMarca('JAC')" data-marca="JAC" aria-label="JAC - Modelos JAC 1035,1040,1042,1048,1061,1083, POWER, POWER EURO 6">
                         <div class="marca-image">
-                            <img src="img/marcas/jac.jpg" alt="Camiones JAC - Repuestos JRR JHR" loading="lazy">
+                            <img src="img/marcas/jac.jpg" alt="Camiones JAC - Repuestos para JAC 1035, POWER, POWER EURO 6" loading="lazy">
                             <div class="marca-overlay">
                                 <span>Ver repuestos <i>→</i></span>
                             </div>
                         </div>
                         <div class="marca-info">
                             <h3>JAC</h3>
-                            <div class="modelos-tags">
-                                <span>JRR</span>
-                                <span>JHR Power</span>
-                                <span>JHR Power+</span>
+                            <div class="modelos-tags" aria-label="Modelos disponibles">
+                                <span>JAC 1035...</span>
+                                <span>POWER</span>
+                                <span>POWER EURO 6</span>
                             </div>
                         </div>
                     </article>
 
-                    <article class="marca-card" onclick="seleccionarMarca('Foton')" data-marca="Foton">
+                    <article class="marca-card" role="listitem" tabindex="0" onclick="seleccionarMarca('Foton')" onkeydown="event.key==='Enter'&&seleccionarMarca('Foton')" data-marca="Foton" aria-label="Foton - Modelos FHR, FQR, FRR, FKR, Ollin">
                         <div class="marca-image">
-                            <img src="img/marcas/foton.jpg" alt="Camiones Foton - Repuestos FHR FQR FRR" loading="lazy">
+                            <img src="img/marcas/foton.jpg" alt="Camiones Foton - Repuestos para FHR, FQR, FRR, FKR, Ollin" loading="lazy">
                             <div class="marca-overlay">
                                 <span>Ver repuestos <i>→</i></span>
                             </div>
                         </div>
                         <div class="marca-info">
                             <h3>Foton</h3>
-                            <div class="modelos-tags">
+                            <div class="modelos-tags" aria-label="Modelos disponibles">
                                 <span>FHR</span>
                                 <span>FQR</span>
                                 <span>FRR</span>
-                                <span>Aumark</span>
+                                <span>FKR</span>
                                 <span>Ollin</span>
                             </div>
                         </div>
                     </article>
 
-                    <article class="marca-card" onclick="seleccionarMarca('JMC')" data-marca="JMC">
+                    <article class="marca-card" role="listitem" tabindex="0" onclick="seleccionarMarca('JMC')" onkeydown="event.key==='Enter'&&seleccionarMarca('JMC')" data-marca="JMC" aria-label="JMC - Modelos CHR, CQR, CKR, CHR Euro 6, CQR Euro 6, CKR Euro 6">
                         <div class="marca-image">
-                            <img src="img/marcas/jmc.jpg" alt="Camiones JMC - Repuestos CHR CKR CQR" loading="lazy">
+                            <img src="img/marcas/jmc.jpg" alt="Camiones JMC - Repuestos para CHR, CQR, CKR, CHR Euro 6, CQR Euro 6, CKR Euro 6" loading="lazy">
                             <div class="marca-overlay">
                                 <span>Ver repuestos <i>→</i></span>
                             </div>
@@ -150,8 +420,11 @@
                             <h3>JMC</h3>
                             <div class="modelos-tags">
                                 <span>CHR</span>
-                                <span>CKR</span>
                                 <span>CQR</span>
+                                <span>CKR</span>
+                                <span>CHR Euro 6</span>
+                                <span>CQR Euro 6</span>
+                                <span>CKR Euro 6</span>
                             </div>
                         </div>
                     </article>
@@ -159,7 +432,37 @@
             </div>
         </section>
 
-        <!-- CONFIGURADOR SECTION -->
+        <!-- TIRA DE MARCAS - SCROLL INFINITO -->
+        <!--
+            Solo se anuncia lo que el propietario ha confirmado.
+            Se quitaron dos promesas/cifras que no estan verificadas (una
+            garantia y un numero de anos de antiguedad). No se reemplazan
+            por inventos: si el propietario las confirma, se vuelven a
+            agregar aqui con el texto exacto que indique.
+        -->
+        <div class="marcas-marquee" aria-hidden="true">
+            <div class="marcas-marquee-track">
+                <div class="marcas-marquee-item"><span>🚚</span> Chevrolet</div>
+                <div class="marcas-marquee-item"><span>🚛</span> JAC</div>
+                <div class="marcas-marquee-item"><span>🚚</span> Foton</div>
+                <div class="marcas-marquee-item"><span>🚛</span> JMC</div>
+                <div class="marcas-marquee-item"><span>🔧</span> Repuestos de Calidad</div>
+                <div class="marcas-marquee-item"><span>⚡</span> Envíos Nacionales</div>
+                <div class="marcas-marquee-item"><span>🔎</span> Amplio Catálogo</div>
+                <div class="marcas-marquee-item"><span>🤝</span> Atención Personalizada</div>
+                <div class="marcas-marquee-item"><span>📦</span> Asesoría Para Identificar Tu Pieza</div>
+                <div class="marcas-marquee-item"><span>🚚</span> Chevrolet</div>
+                <div class="marcas-marquee-item"><span>🚛</span> JAC</div>
+                <div class="marcas-marquee-item"><span>🚚</span> Foton</div>
+                <div class="marcas-marquee-item"><span>🚛</span> JMC</div>
+                <div class="marcas-marquee-item"><span>🔧</span> Repuestos de Calidad</div>
+                <div class="marcas-marquee-item"><span>⚡</span> Envíos Nacionales</div>
+                <div class="marcas-marquee-item"><span>🔎</span> Amplio Catálogo</div>
+                <div class="marcas-marquee-item"><span>🤝</span> Atención Personalizada</div>
+                <div class="marcas-marquee-item"><span>📦</span> Asesoría Para Identificar Tu Pieza</div>
+            </div>
+        </div>
+
         <section class="configurador" id="configurador" style="display: none;">
             <div class="container">
                 <nav class="breadcrumb">
@@ -171,125 +474,667 @@
                     <span class="current" id="breadcrumbText">Configurar cotización</span>
                 </nav>
 
-                <!-- Info Marca -->
-                <div class="info-card">
-                    <div class="info-icon">🏷️</div>
+                <div class="info-card" role="status" aria-live="polite">
+                    <div class="info-icon" aria-hidden="true">🏷️</div>
                     <div class="info-content">
-                        <label>Marca seleccionada</label>
-                        <strong id="marcaDisplay">-</strong>
+                        <label id="marcaLabel">Marca seleccionada</label>
+                        <strong id="marcaDisplay" aria-labelledby="marcaLabel">-</strong>
                     </div>
                 </div>
 
-                <!-- Formulario -->
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="modeloSelect">
-                            <span class="label-icon">🚚</span>
+                        <label for="modeloSelect" id="modeloLabel">
+                            <span class="label-icon" aria-hidden="true">🚚</span>
                             Modelo del Camión
                         </label>
                         <div class="select-wrapper">
-                            <select id="modeloSelect">
+                            <select id="modeloSelect" aria-labelledby="modeloLabel" aria-describedby="modeloHelp" required>
                                 <option value="">Selecciona el modelo</option>
                             </select>
                         </div>
+                        <span id="modeloHelp" class="sr-only">Requerido para mostrar repuestos compatibles</span>
                     </div>
 
                     <div class="form-group">
-                        <label for="anioSelect">
-                            <span class="label-icon">📅</span>
+                        <label for="anioSelect" id="anioLabel">
+                            <span class="label-icon" aria-hidden="true">📅</span>
                             Año del Vehículo
                         </label>
                         <div class="select-wrapper">
-                            <select id="anioSelect">
+                            <select id="anioSelect" aria-labelledby="anioLabel" aria-describedby="anioHelp" required>
                                 <option value="">Selecciona el año</option>
                             </select>
                         </div>
+                        <span id="anioHelp" class="sr-only">Requerido para filtrar repuestos por año</span>
                     </div>
                 </div>
 
-                <!-- Repuestos -->
-                <div class="repuestos-section">
-                    <h3>
-                        <span>🔧</span>
-                        Repuestos Disponibles
+                <div class="repuestos-section" aria-labelledby="repuestosTitulo">
+                    <h3 id="repuestosTitulo">
+                        <span aria-hidden="true">🔧</span>
+                        Selecciona los repuestos que necesitas
                     </h3>
-                    <div class="repuestos-grid" id="repuestosContainer">
-                        <!-- Se genera con JS -->
+
+                    <!-- ============================================================
+                         BUSCADOR INTELIGENTE DE REPUESTOS
+                         ============================================================
+                         Ayuda al usuario a encontrar su repuesto dentro de la
+                         marca/modelo/año ya elegidos. Entiende apodos ("stop",
+                         "bomper") y errores de ortografía ("farloa", "espego").
+                         Filtra la lista real del catálogo, no inventa nada:
+                         si no hay coincidencia, ofrece enviar foto por WhatsApp.
+                         La lógica vive en js/buscador-repuestos.js.
+                    ============================================================ -->
+                    <div class="buscador-repuestos" role="search" aria-labelledby="buscadorTitulo">
+                        <h4 id="buscadorTitulo">
+                            <span aria-hidden="true">🔎</span>
+                            ¿Buscas un repuesto en especial?
+                        </h4>
+                        <p class="buscador-sub">Escríbelo como lo llamas: entiende apodos y errores de ortografía.</p>
+                        <div class="buscador-caja">
+                            <input id="buscadorInput" type="search" placeholder="Ej: farola, stop, bomper…"
+                                   autocomplete="off" aria-describedby="buscadorConteo">
+                            <button id="buscadorLimpiar" class="buscador-limpiar" type="button"
+                                    aria-label="Limpiar búsqueda" hidden>×</button>
+                        </div>
+                        <div class="buscador-atajos" aria-label="Búsquedas rápidas">
+                            <span class="buscador-atajos-titulo">Prueba con:</span>
+                            <button type="button" class="buscador-chip" data-q="farola">Farolas</button>
+                            <button type="button" class="buscador-chip" data-q="stop">Stops</button>
+                            <button type="button" class="buscador-chip" data-q="bomper">Bomper</button>
+                            <button type="button" class="buscador-chip" data-q="direccional">Direccionales</button>
+                            <button type="button" class="buscador-chip" data-q="exploradora">Exploradoras</button>
+                            <button type="button" class="buscador-chip" data-q="espejo">Espejos</button>
+                            <button type="button" class="buscador-chip" data-q="manija">Manijas</button>
+                            <button type="button" class="buscador-chip" data-q="persiana">Persiana</button>
+                        </div>
+                        <p class="buscador-conteo" id="buscadorConteo" role="status" aria-live="polite"></p>
+                    </div>
+
+                    <div class="repuestos-grid" id="repuestosContainer" role="list" aria-label="Lista de repuestos disponibles">
+                    </div>
+
+                    <div class="repuestos-ayuda" id="repuestosAyuda">
+                        <div class="ayuda-icono" aria-hidden="true">📷</div>
+                        <div class="ayuda-texto">
+                            <strong>¿No encuentras tu repuesto?</strong>
+                            <p>Escríbenos y envíanos una foto del producto que buscas. Verificamos disponibilidad y te cotizamos.</p>
+                        </div>
+                        <a href="https://wa.me/573124692806?text=Hola,%20no%20encuentro%20un%20repuesto%20y%20quiero%20enviarles%20una%20foto" 
+                           target="_blank" rel="noopener noreferrer" class="btn-ayuda-wa" onclick="trackWhatsAppClick('ayuda')">
+                            📱 Enviar foto por WhatsApp
+                        </a>
                     </div>
                 </div>
 
-                <!-- Resumen -->
-                <div class="resumen-card">
+                <div class="resumen-card" aria-labelledby="resumenTitulo">
                     <div class="resumen-header">
-                        <h3>
-                            <span>📋</span>
+                        <h3 id="resumenTitulo">
+                            <span aria-hidden="true">📋</span>
                             Tu Cotización
                         </h3>
-                        <span class="contador" id="contadorItems">0 items</span>
+                        <span class="contador" id="contadorItems" aria-live="polite" aria-atomic="true">0 items</span>
                     </div>
                     
-                    <div class="resumen-lista" id="listaResumen">
+                    <div class="resumen-lista" id="listaResumen" role="list" aria-label="Repuestos seleccionados para cotizar">
                         <p class="empty-state">Selecciona los repuestos que necesitas arriba...</p>
                     </div>
 
                     <div class="resumen-actions">
-                        <button class="btn-whatsapp" id="btnEnviar" onclick="enviarCotizacion()">
-                            <span class="icon">💬</span>
+                        <button class="btn-whatsapp" id="btnEnviar" onclick="enviarCotizacion()" aria-describedby="btnEnviarDesc">
+                            <span class="icon" aria-hidden="true">💬</span>
                             <span class="text">
                                 <strong>Enviar por WhatsApp</strong>
                                 <small>Cotización gratuita</small>
                             </span>
                         </button>
+                        <span id="btnEnviarDesc" class="sr-only">Se abrirá WhatsApp con tu cotización preparada</span>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Mapa -->
-                <div class="ubicacion-section">
-                    <h3>📍 Nuestra Ubicación</h3>
-                    <div class="mapa-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.1234567890123!2d-74.12345678901234!3d4.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDcnMjQuNCJOIDc0wrAwNycyNC40Ilc!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco"
-                            width="100%" 
-                            height="350" 
-                            style="border:0; border-radius: 16px;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Ubicación de Lujos y Accesorios en Bogotá">
-                        </iframe>
-                        <div class="mapa-info">
-                            <strong>Calle 6A #17-59</strong>
-                            <span>Bogotá, Colombia</span>
-                            <a href="https://maps.google.com/?q=Calle+6A+%2317-59+Bogotá+Colombia" target="_blank" class="btn-maps">Cómo llegar →</a>
+        <!-- SECCIÓN TIKTOK - TRABAJOS REALIZADOS -->
+        <section class="tiktok-section" id="trabajos">
+            <div class="container">
+                <div class="section-header">
+                    <h2>🔧 Trabajos Realizados</h2>
+                    <p>Mira cómo transformamos los camiones de nuestros clientes. Toca cualquier video para verlo completo en TikTok.</p>
+                </div>
+                
+                <div class="tiktok-grid" id="tiktokContainer">
+                </div>
+                
+                <div class="tiktok-cta">
+                    <a href="https://www.tiktok.com/@lujosyaccesorioscamiones" target="_blank" rel="noopener noreferrer" class="btn-tiktok" onclick="trackTikTokClick('perfil')">
+                        <span>🎵</span>
+                        <span>Ver más en TikTok</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECCIÓN CATÁLOGO COMPLETO EN PDF (compacta)
+             ============================================================
+             Tarjeta pequeña con solo dos botones: VER y DESCARGAR.
+             Son enlaces reales al PDF, asi que funcionan con o sin
+             JavaScript. El archivo vive en  /catalogo/  y su ruta se
+             configura en un solo sitio: CATALOG_CONFIG (js/config.js).
+             No se inventa ninguna portada.
+        ============================================================ -->
+        <section class="catalogo-pdf-section" id="catalogo-pdf">
+            <div class="container">
+                <div class="catalogo-pdf-card">
+                    <!-- Vista previa: miniatura real de la portada del PDF.
+                         Si el archivo no existe, catalogo-pdf.js la oculta y
+                         muestra el icono de libro en su lugar. -->
+                    <div class="catalogo-pdf-preview">
+                        <img id="catalogoPortada"
+                             class="catalogo-pdf-portada"
+                             src="img/catalogo/portada-catalogo.jpg"
+                             alt="Portada del catálogo PDF de Lujos y Accesorios"
+                             loading="lazy" decoding="async"
+                             onerror="(function(i,o){i.hidden=true;o.hidden=false;})(document.getElementById('catalogoPortada'),document.getElementById('catalogoIcono'));">
+                        <!-- Icono de respaldo. Empieza oculto para no tapar una
+                             portada real; se muestra solo si la imagen falla. -->
+                        <div class="catalogo-pdf-icono" id="catalogoIcono" aria-hidden="true" hidden>&#128218;</div>
+                    </div>
+
+                    <div class="catalogo-pdf-body">
+                        <p class="catalogo-pdf-kicker">Catálogo completo</p>
+                        <h2>Consulta nuestro catálogo completo</h2>
+                        <p class="catalogo-pdf-lead">
+                            Encuentra repuestos, lujos y accesorios para camiones en
+                            nuestro catálogo digital.
+                        </p>
+
+                        <!-- Los dos botones, siempre visibles: son enlaces reales
+                             que funcionan con o sin JavaScript. -->
+                        <div class="catalogo-pdf-acciones" id="catalogoAcciones">
+                              <!--
+                                Boton principal: "VER CATALOGO".
+                                Es un enlace real (no un boton con window.open) para que
+                                funcione con el teclado, con el menu de contexto y con
+                                "abrir en nueva pestana" del navegador, y para que los
+                              buscadores lo indexen. El atributo download se anula
+                              con JS porque aqui interesa VERLO, no descargarlo.
+                            -->
+                            <a class="btn-catalogo"
+                               id="btnVerCatalogo"
+                               href="catalogo/catalogo-lujos-y-accesorios.pdf"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Ver el catálogo completo en PDF en una nueva pestaña">
+                                <span class="btn-catalogo-ico" aria-hidden="true">📖</span>
+                                <span>VER CATÁLOGO</span>
+                            </a>
+
+                            <!-- Boton secundario: descarga unicamente el PDF -->
+                            <a class="btn-catalogo-secundario"
+                               id="btnDescargarCatalogo"
+                               href="catalogo/catalogo-lujos-y-accesorios.pdf"
+                               download="catalogo-lujos-y-accesorios.pdf"
+                               aria-label="Descargar el catálogo completo en PDF">
+                                <span class="btn-catalogo-ico" aria-hidden="true">⬇</span>
+                                <span>DESCARGAR CATÁLOGO PDF</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             EXPLORA POR CATEGORÍA
+             ============================================================
+             Las tarjetas con página propia enlazan a páginas reales
+             generadas (repuestos, accesorios, lujos, farolas, bómperes,
+             estribos). Las demás usan el buscador inteligente del
+             cotizador (irACategoria): si ya elegiste marca y modelo,
+             busca de una vez; si no, te lleva a elegir marca y luego
+             aplica la búsqueda. Nada se inventa.
+        ============================================================ -->
+        <section class="categorias-section" id="categorias">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explora por categoría</h2>
+                    <p>Encuentra lo que tu camión necesita: repuestos, lujos y accesorios</p>
+                </div>
+                <div class="categorias-grid" role="list" aria-label="Categorías de productos para camiones">
+                    <a class="categoria-card" role="listitem" href="repuestos-para-camiones/index.html">
+                        <span class="categoria-img"><img src="img/repuestos/guardabarros.png" alt="Repuestos para camiones" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Repuestos para camiones</strong><small>Piezas para mantener tu camión trabajando</small><span class="categoria-ver">Ver <i aria-hidden="true">→</i></span></span>
+                    </a>
+                    <a class="categoria-card" role="listitem" href="accesorios-para-camiones/index.html">
+                        <span class="categoria-img"><img src="img/repuestos/accesorios.png" alt="Accesorios para camiones" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Accesorios para camiones</strong><small>Equipa tu camión a tu medida</small><span class="categoria-ver">Ver <i aria-hidden="true">→</i></span></span>
+                    </a>
+                    <a class="categoria-card" role="listitem" href="lujos-para-camiones/index.html">
+                        <span class="categoria-img"><img src="img/repuestos/cromos.png" alt="Lujos para camiones" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Lujos para camiones</strong><small>Dale presencia a tu carro</small><span class="categoria-ver">Ver <i aria-hidden="true">→</i></span></span>
+                    </a>
+                    <a class="categoria-card" role="listitem" href="productos/farolas/index.html">
+                        <span class="categoria-img"><img src="img/repuestos/farola.png" alt="Farolas para camiones" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Farolas</strong><small>Unidades y farolas delanteras</small><span class="categoria-ver">Ver <i aria-hidden="true">→</i></span></span>
+                    </a>
+                    <a class="categoria-card" role="listitem" href="productos/bumpers/index.html">
+                        <span class="categoria-img"><img src="img/repuestos/bomper.png" alt="Bómper para camión" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Bómperes</strong><small>Defensas delanteras</small><span class="categoria-ver">Ver <i aria-hidden="true">→</i></span></span>
+                    </a>
+                    <a class="categoria-card" role="listitem" href="productos/estribos/index.html">
+                        <span class="categoria-img"><img src="img/repuestos/estribos.png" alt="Estribos para camiones" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Estribos</strong><small>Súbete seguro a tu camión</small><span class="categoria-ver">Ver <i aria-hidden="true">→</i></span></span>
+                    </a>
+                    <a class="categoria-card" role="listitem" href="#marcas" onclick="irACategoria('persiana');return false;">
+                        <span class="categoria-img"><img src="img/repuestos/chevrolet FRR/Persiana.png" alt="Persianas para camiones" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Persianas</strong><small>Rejillas y persianas de frente</small><span class="categoria-ver">Buscar <i aria-hidden="true">→</i></span></span>
+                    </a>
+                    <a class="categoria-card" role="listitem" href="#marcas" onclick="irACategoria('exploradora');return false;">
+                        <span class="categoria-img"><img src="img/repuestos/chevrolet FRR/Exploradora.png" alt="Exploradoras para camiones" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Exploradoras</strong><small>Luces auxiliares y antiniebla</small><span class="categoria-ver">Buscar <i aria-hidden="true">→</i></span></span>
+                    </a>
+                    <a class="categoria-card" role="listitem" href="#marcas" onclick="irACategoria('exterior');return false;">
+                        <span class="categoria-img"><img src="img/repuestos/espejos.png" alt="Accesorios exteriores para camiones" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Accesorios exteriores</strong><small>Espejos, manijas y más</small><span class="categoria-ver">Buscar <i aria-hidden="true">→</i></span></span>
+                    </a>
+                    <a class="categoria-card" role="listitem" href="#marcas">
+                        <span class="categoria-img"><img src="img/repuestos/manijas.png" alt="Otros productos para camiones" loading="lazy" decoding="async" onerror="this.style.display='none'"></span>
+                        <span class="categoria-info"><strong>Otros productos</strong><small>Explora todo por marca y modelo</small><span class="categoria-ver">Explorar <i aria-hidden="true">→</i></span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================================
+             SECCIÓN RESEÑAS / TESTIMONIOS
+             ============================================================
+             La tarjeta actual es un mensaje del negocio (no una reseña de
+             un cliente): no inventa nombres, estrellas, fechas ni textos.
+
+             PARA PUBLICAR RESEÑAS REALES:
+             borra la tarjeta .testimonio-pendiente y pega dentro de
+             #googleReviewsGrid las reseñas copiadas del Perfil de Empresa
+             en Google con esta estructura:
+
+             <article class="testimonio-card">
+                 <div class="testimonio-header">
+                     <div class="testimonio-avatar" aria-hidden="true">👤</div>
+                     <div class="testimonio-info">
+                         <strong>NOMBRE REAL</strong>
+                         <span>MODELO DE CAMION (opcional)</span>
+                     </div>
+                     <div class="testimonio-stars" aria-label="CALIFICACION de 5">★★★★★</div>
+                 </div>
+                 <p>TEXTO EXACTO DE LA RESEÑA</p>
+                 <div class="testimonio-fecha">FECHA REAL</div>
+             </article>
+
+             - El botón "Déjanos tu reseña en Google" solo aparece cuando
+               existe una URL real del Perfil de Empresa configurada en
+               js/config.js (SOCIAL_LINKS.googleReviewUrl).
+             - No inventes nombres, estrellas, fechas ni textos.
+        ============================================================ -->
+        <!-- ============================================================
+             POR QUE ELEGIR LUJOS Y ACCESORIOS (texto sin tildes a proposito
+             en este comentario para evitar problemas de codificacion)
+             ============================================================
+             Solo afirmaciones verificables con lo que la pagina muestra:
+             especialistas en camiones (4 marcas del catalogo), asesoria
+             para identificar piezas (buscador + foto por WhatsApp),
+             instalaciones visibles en Trabajos, cotizacion por WhatsApp
+             y atencion en Bogota con envios a Colombia.
+             Nada de certificaciones, anios ni cifras inventadas.
+        ============================================================ -->
+        <section class="confianza-section" id="confianza">
+            <div class="container">
+                <div class="section-header">
+                    <h2>¿Por qué elegir Lujos y Accesorios?</h2>
+                    <p>Un negocio de barrio que vive de los camiones, no una vitrina más</p>
+                </div>
+                <div class="confianza-grid" role="list" aria-label="Razones para elegir Lujos y Accesorios">
+                    <article class="confianza-card" role="listitem">
+                        <div class="confianza-icono" aria-hidden="true">🚛</div>
+                        <h3>Especialistas en camiones</h3>
+                        <p>Trabajamos Chevrolet, JAC, Foton y JMC. Conocemos sus modelos y sus piezas porque es lo único que vendemos.</p>
+                    </article>
+                    <article class="confianza-card" role="listitem">
+                        <div class="confianza-icono" aria-hidden="true">🔎</div>
+                        <h3>Te ayudamos a identificar tu pieza</h3>
+                        <p>¿No sabes cómo se llama? Usa el buscador de esta página o mándanos una foto por WhatsApp y la identificamos contigo.</p>
+                    </article>
+                    <article class="confianza-card" role="listitem">
+                        <div class="confianza-icono" aria-hidden="true">🔧</div>
+                        <h3>Instalación en nuestro taller</h3>
+                        <p>Mira en Nuestros trabajos cómo quedan las instalaciones que hacemos en Bogotá, en La Estanzuela.</p>
+                    </article>
+                    <article class="confianza-card" role="listitem">
+                        <div class="confianza-icono" aria-hidden="true">💬</div>
+                        <h3>Cotización clara por WhatsApp</h3>
+                        <p>Arma tu pedido en el cotizador y te llega la cotización lista. Sin vueltas y sin compromiso.</p>
+                    </article>
+                </div>
+                <div class="confianza-cta">
+                    <a href="https://wa.me/573124692806?text=Hola%2C%20quiero%20asesor%C3%ADa%20para%20mi%20cami%C3%B3n"
+                       target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-wa" onclick="trackWhatsAppClick('confianza')"
+                       aria-label="Hablar con nosotros por WhatsApp">
+                        <span aria-hidden="true">📱</span>
+                        HABLA CON NOSOTROS
+                    </a>
+                    <button class="btn-hero" onclick="Navegacion.desplazarA('trabajos')" aria-label="Conoce nuestros trabajos">
+                        <span aria-hidden="true">🔧</span>
+                        CONOCE NUESTROS TRABAJOS
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonios-section" id="testimonios">
+            <div class="container">
+                <div class="section-header">
+                    <h2>⭐ Opiniones de clientes</h2>
+                    <p>Tu opinión nos ayuda a mejorar</p>
+                </div>
+
+                <div class="testimonios-grid" id="googleReviewsGrid">
+                    <article class="testimonio-card testimonio-pendiente">
+                        <div class="testimonio-header">
+                            <div class="testimonio-avatar" aria-hidden="true">⭐</div>
+                            <div class="testimonio-info">
+                                <strong>Lujos y Accesorios</strong>
+                                <span>Opiniones de clientes</span>
+                            </div>
+                        </div>
+                        <p>Estamos reuniendo las opiniones de nuestros clientes y muy pronto las verás publicadas aquí.</p>
+                    </article>
+                </div>
+
+                <!--
+                  El boton de resena se habilita solo cuando exista una URL real
+                  del Perfil de Empresa en Google configurada en js/config.js
+                  (SOCIAL_LINKS.googleReviewUrl). Si esta vacio, se oculta para no
+                  mostrar un enlace que no lleve al negocio real.
+                -->
+                <div class="tiktok-cta" id="contenedorBotonResena" hidden>
+                    <a id="botonResenaGoogle" class="btn-tiktok">
+                        <span>⭐</span>
+                        <span>Déjanos tu reseña en Google</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN ANTES Y DESPUÉS -->
+        <section class="antes-despues-section" id="resultados">
+            <div class="container">
+                <div class="section-header">
+                    <h2>🔄 Antes y Después</h2>
+                    <p>Resultados reales de nuestros trabajos de instalación de repuestos</p>
+                </div>
+                
+                <div class="antes-despues-grid">
+                    <div class="antes-despues-card">
+                        <div class="slider-container" data-slider>
+                            <img class="slider-img slider-img-after" src="img/antes-despues/despues1.jpg" alt="Después - Camión Chevrolet NPR con repuestos nuevos instalados" loading="lazy">
+                            <img class="slider-img slider-img-before" src="img/antes-despues/antes1.jpg" alt="Antes - Camión Chevrolet NPR antes del cambio de repuestos" loading="lazy">
+                            <div class="slider-line" data-line></div>
+                            <div class="slider-handle" data-handle><span>◀ ▶</span></div>
+                            <span class="slider-label slider-label-before">Antes</span>
+                            <span class="slider-label slider-label-after">Después</span>
+                        </div>
+                        <div class="antes-despues-info">
+                            <h4>Instalación de repuestos para cabina</h4>
+                            <p>Chevrolet NPR - Resultado del trabajo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="antes-despues-card">
+                        <div class="slider-container" data-slider>
+                            <img class="slider-img slider-img-after" src="img/antes-despues/despues2.jpg" alt="Después - Camión JAC con repuestos nuevos" loading="lazy">
+                            <img class="slider-img slider-img-before" src="img/antes-despues/antes2.jpg" alt="Antes - Camión JAC antes del cambio de repuestos" loading="lazy">
+                            <div class="slider-line" data-line></div>
+                            <div class="slider-handle" data-handle><span>◀ ▶</span></div>
+                            <span class="slider-label slider-label-before">Antes</span>
+                            <span class="slider-label slider-label-after">Después</span>
+                        </div>
+                        <div class="antes-despues-info">
+                            <h4>Cambio de componentes de carrocería</h4>
+                            <p>JAC - Resultado del trabajo</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- INFO ADICIONAL -->
+        <!-- SECCIÓN FAQ -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>❓ Preguntas Frecuentes</h2>
+                    <p>Resolvemos tus dudas para que compres con total confianza</p>
+                </div>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Tienen repuestos para mi camión?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Trabajamos con <strong>Chevrolet, JAC, Foton y JMC</strong>. En nuestro catálogo hay repuestos para los modelos NHR, NPR, NQR, NKR, FRR y FTR de Chevrolet; las series 1035, 1040, 1042, 1048, 1061 y 1083, POWER y POWER EURO 6 de JAC; FHR, FQR, FRR, FKR y Ollin de Foton; y CHR, CQR, CKR y sus versiones Euro 6 de JMC.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Puedo enviar una foto si no sé qué pieza necesito?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí. Envíanos por WhatsApp una foto de tu camión o de la pieza y te ayudamos a identificarla. También puedes visitarnos en nuestro taller en Bogotá y mostrarnos la pieza directamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cómo sé si una pieza es compatible con mi camión?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>En el configurador de esta página selecciona <strong>marca, modelo y año</strong>: el sistema solo te mostrará los repuestos que corresponden a esa combinación. Si tienes dudas, mándanos la foto por WhatsApp y te confirmamos la compatibilidad antes de cotizar.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Realizan envíos a otras ciudades?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, enviamos a toda Colombia. Indícanos tu ciudad de destino por WhatsApp y te cotizamos el valor del envío junto con el de la pieza.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Dónde están ubicados?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Estamos en <strong>Calle 6A #17-59, barrio La Estanzuela, Bogotá</strong>. Puedes visitarnos o llamarnos al <a href="tel:+573124692806">+57 312 469 2806</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cómo puedo cotizar?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Puedes usar el configurador de esta página: selecciona marca, modelo, año, agrega las piezas que necesites y te enviamos la cotización por WhatsApp. Si prefieres, también puedes escribirnos directamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Hacen instalación de los repuestos?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Escríbenos por WhatsApp contándonos qué repuesto necesitas y te confirmamos si podemos ayudarte con la instalación en nuestro taller en Bogotá. También puedes visitarnos para verlo directamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Qué formas de pago aceptan?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Consultanos por WhatsApp las formas de pago disponibles y el precio de tu pedido. Te confirmamos el valor total antes de despachar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN BENEFICIOS (sin estadísticas inventadas) -->
         <section class="info-section">
             <div class="container">
                 <div class="info-grid">
                     <div class="info-item">
                         <div class="info-icon-large">🚛</div>
-                        <h4>Amplio Inventario</h4>
-                        <p>Tenemos la pieza que buscas para tu camión, desde modelos clásicos hasta los más modernos.</p>
+                        <h4>Amplio catálogo</h4>
+                        <p>Bómperes, farolas, estribos, persianas, espejos, guardabarros y más para camiones livianos y pesados.</p>
                     </div>
                     <div class="info-item">
                         <div class="info-icon-large">⚡</div>
-                        <h4>Entrega Rápida</h4>
-                        <p>Envíos en Bogotá y despacho inmediato a nivel nacional.</p>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon-large">🛡️</div>
-                        <h4>Garantía de alta calidad</h4>
-                        <p>Todas nuestras piezas cuentan con garantía de calidad directo de la fábrica.</p>
+                        <h4>Envíos nacionales</h4>
+                        <p>Despachamos a toda Colombia. Indícanos tu ciudad y te cotizamos el envío junto con tu pedido.</p>
                     </div>
                     <div class="info-item">
                         <div class="info-icon-large">💬</div>
-                        <h4>Asesoría Experta</h4>
-                        <p>Te ayudamos a identificar exactamente qué repuesto necesitas.</p>
+                        <h4>Asesoría para identificar tu pieza</h4>
+                        <p>Si no sabes qué repuesto necesitas, mándanos una foto por WhatsApp y te ayudamos a identificarlo.</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon-large">🔧</div>
+                        <h4>Instalación</h4>
+                        <p>Contáctanos y te confirmamos si podemos ayudarte con la instalación en nuestro taller en Bogotá.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SEGUNDA VÍA DE COTIZACIÓN: ENVIAR FOTO ============ -->
+        <section class="foto-section" id="foto">
+            <div class="container">
+                <div class="foto-card">
+                    <div class="foto-icono" aria-hidden="true">📷</div>
+                    <div class="foto-texto">
+                        <h2>¿No sabes qué pieza necesitas?</h2>
+                        <p>Envíanos una foto de tu camión o de la pieza y te ayudamos a identificarla. También puedes visitarnos en nuestro taller y mostrarnos la pieza directamente.</p>
+                        <p class="foto-ubicacion">Atendemos en <strong>Calle 6A #17-59, La Estanzuela, Bogotá</strong>.</p>
+                    </div>
+                    <a href="https://wa.me/573124692806?text=Hola%2C%20no%20s%C3%A9%20qu%C3%A9%20pieza%20necesito.%20Voy%20a%20enviarte%20una%20foto%20del%20cam%C3%B3n%20y%20de%20la%20pieza%20para%20que%20me%20ayudes%20a%20identificarla."
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn-foto-wa"
+                       onclick="trackEnvioFotoWhatsApp()">
+                        <span>📱</span>
+                        ENVIAR FOTO POR WHATSAPP
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ UBICACIÓN (sección independiente) ============ -->
+        <!-- ============================================================
+             REDES SOCIALES: solo perfiles oficiales confirmados.
+             TikTok, Instagram y YouTube existen y se verificaron;
+             Maps es el enlace oficial corto del negocio.
+        ============================================================ -->
+        <section class="social-section" id="redes">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Síguenos y descubre nuestros trabajos</h2>
+                    <p>Conoce nuestros productos, instalaciones, transformaciones y novedades para camiones.</p>
+                </div>
+                <div class="social-grid" role="list" aria-label="Redes sociales de Lujos y Accesorios">
+                    <a class="social-card" role="listitem" href="https://www.tiktok.com/@lujosyaccesorioscamiones"
+                       target="_blank" rel="noopener noreferrer" onclick="trackSocialClick('tiktok')"
+                       aria-label="TikTok de Lujos y Accesorios">
+                        <span class="social-icono" aria-hidden="true">🎵</span>
+                        <strong>TikTok</strong>
+                        <small>Mira los trabajos en video</small>
+                    </a>
+                    <a class="social-card" role="listitem" href="https://www.instagram.com/lujosyaccesorioscamiones"
+                       target="_blank" rel="noopener noreferrer" onclick="trackSocialClick('instagram')"
+                       aria-label="Instagram de Lujos y Accesorios">
+                        <span class="social-icono" aria-hidden="true">📷</span>
+                        <strong>Instagram</strong>
+                        <small>Fotos y novedades</small>
+                    </a>
+                    <a class="social-card" role="listitem" href="https://www.youtube.com/@lujosyaccesorios-z1p"
+                       target="_blank" rel="noopener noreferrer" onclick="trackSocialClick('youtube')"
+                       aria-label="Canal de YouTube de Lujos y Accesorios">
+                        <span class="social-icono" aria-hidden="true">▶️</span>
+                        <strong>YouTube</strong>
+                        <small>Nuestro canal</small>
+                    </a>
+                    <a class="social-card" role="listitem" href="https://maps.app.goo.gl/6jB4HeUk5NPbDvGt6"
+                       target="_blank" rel="noopener noreferrer" onclick="trackSocialClick('maps')"
+                       aria-label="Cómo llegar a Lujos y Accesorios en Google Maps">
+                        <span class="social-icono" aria-hidden="true">📍</span>
+                        <strong>Google Maps</strong>
+                        <small>Cómo llegar al taller</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mapa-section" id="ubicacion">
+            <div class="container">
+                <div class="section-header">
+                    <h2>📍 Encuéntranos en Bogotá</h2>
+                    <p>Visítanos en nuestro taller en La Estanzuela. Te asesoramos en persona y resolvemos tus dudas.</p>
+                </div>
+
+                <div class="mapa-grid">
+                    <div class="mapa-embed">
+                        <iframe
+                            src="https://www.google.com/maps?q=Calle+6a+%2317-59+La+Estanzuela%2C+Bogot%C3%A1%2C+Colombia&z=17&hl=es&output=embed"
+                            width="100%" height="400" style="border:0; border-radius: 16px;"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de Lujos y Accesorios - Calle 6A #17-59, La Estanzuela, Bogotá"></iframe>
+                    </div>
+                    <div class="mapa-datos">
+                        <h3>Lujos y Accesorios</h3>
+                        <div class="mapa-fila">
+                            <span class="mapa-fila-icono" aria-hidden="true">📍</span>
+                            <span>
+                                <strong>Calle 6A #17-59</strong><br>
+                                Barrio La Estanzuela, Bogotá, Colombia
+                            </span>
+                        </div>
+                        <div class="mapa-fila">
+                            <span class="mapa-fila-icono" aria-hidden="true">📞</span>
+                            <a href="tel:+573124692806" onclick="trackLlamadaClick()">+57 312 469 2806</a>
+                        </div>
+                        <div class="mapa-acciones">
+                            <a href="https://maps.app.goo.gl/6jB4HeUk5NPbDvGt6"
+                               target="_blank" rel="noopener noreferrer" class="btn-foto-wa" onclick="trackMapsClick()"
+                               aria-label="Cómo llegar a Lujos y Accesorios en Google Maps">
+                                <span aria-hidden="true">📍</span> CÓMO LLEGAR A LUJOS Y ACCESORIOS
+                            </a>
+                            <a href="https://wa.me/573124692806?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20repuestos%20para%20camiones."
+                               target="_blank" rel="noopener noreferrer" class="btn-foto-wa" onclick="trackWhatsAppClick('mapa')">
+                               <span aria-hidden="true">📱</span> ESCRÍBENOS
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -304,63 +1149,141 @@
                         <span>🚛</span>
                         <strong>Lujos y Accesorios</strong>
                     </div>
-                    <p>Especialistas en repuestos y accesorios para camiones livianos y pesados. Más de una década brindando soluciones de calidad.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="YouTube">▶️</a>
-                    </div>
+                    <p>Repuestos y accesorios para camiones livianos y pesados. Chevrolet, JAC, Foton y JMC. Atención en Bogotá y envíos a toda Colombia.</p>
+                    <!--
+                      Los iconos se generan solos desde js/config.js (SOCIAL_LINKS).
+                      Instagram, Facebook y YouTube aparecen únicamente cuando
+                      tienen una URL real configurada.
+                    -->
+                    <div class="social-links" data-social-links></div>
                 </div>
-                
+
+                <div class="footer-links">
+                    <h4>Explora</h4>
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#recomendados">Productos</a></li>
+                        <li><a href="index.html#categorias">Categorías</a></li>
+                        <li><a href="index.html#configurador">Cotizador</a></li>
+                        <li><a href="index.html#trabajos">Trabajos</a></li>
+                        <li><a href="index.html#ubicacion">Contacto</a></li>
+                    </ul>
+                </div>
+
                 <div class="footer-links">
                     <h4>Marcas</h4>
                     <ul>
-                        <li><a href="#marcas" onclick="seleccionarMarca('Chevrolet')">Chevrolet</a></li>
-                        <li><a href="#marcas" onclick="seleccionarMarca('JAC')">JAC</a></li>
-                        <li><a href="#marcas" onclick="seleccionarMarca('Foton')">Foton</a></li>
-                        <li><a href="#marcas" onclick="seleccionarMarca('JMC')">JMC</a></li>
+                        <li><a href="chevrolet/index.html">Chevrolet</a></li>
+                        <li><a href="jac/index.html">JAC</a></li>
+                        <li><a href="foton/index.html">Foton</a></li>
+                        <li><a href="jmc/index.html">JMC</a></li>
                     </ul>
                 </div>
-                
+
+                <div class="footer-links">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="repuestos-para-camiones/index.html">Repuestos para camiones</a></li>
+                        <li><a href="accesorios-para-camiones/index.html">Accesorios para camiones</a></li>
+                        <li><a href="lujos-para-camiones/index.html">Lujos para camiones</a></li>
+                        <li><a href="productos/bumpers/index.html">Bómperes</a></li>
+                        <li><a href="productos/farolas/index.html">Farolas</a></li>
+                        <li><a href="productos/estribos/index.html">Estribos</a></li>
+                    </ul>
+                </div>
+
                 <div class="footer-links">
                     <h4>Contacto</h4>
                     <ul>
-                        <li>📍 Calle 6A #17-59, Bogotá</li>
+                        <li>📍 Calle 6A #17-59, La Estanzuela, Bogotá</li>
                         <li>📞 <a href="tel:+573124692806">+57 312 469 2806</a></li>
-                        <li>✉️ <a href="mailto:info@lujosyaccesorios.com">info@lujosyaccesorios.com</a></li>
-                        <li>🕐 Lun-Vie: 8am-6pm, Sáb: 8am-1pm</li>
+                        <li><a href="https://wa.me/573124692806" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a></li>
+                        <li><a href="https://www.tiktok.com/@lujosyaccesorioscamiones" target="_blank" rel="noopener noreferrer">🎵 TikTok</a></li>
+                        <li><a href="https://www.instagram.com/lujosyaccesorioscamiones" target="_blank" rel="noopener noreferrer">📷 Instagram</a></li>
+                        <li><a href="https://www.youtube.com/@lujosyaccesorios-z1p" target="_blank" rel="noopener noreferrer">▶️ YouTube</a></li>
+                        <li><a href="https://maps.app.goo.gl/6jB4HeUk5NPbDvGt6" target="_blank" rel="noopener noreferrer">📍 Google Maps</a></li>
+                        <li><span id="estadoHorario" class="estado-horario"></span></li>
                     </ul>
                 </div>
             </div>
-            
+
+            <div class="footer-legal">
+                <a href="politica-privacidad/index.html">Política de Privacidad</a>
+                <span aria-hidden="true">·</span>
+                <a href="politica-cookies/index.html">Política de Cookies</a>
+            </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Lujos y Accesorios. Todos los derechos reservados.</p>
-                <p>Hecho con ❤️ en Bogotá, Colombia</p>
+                <p>&copy; <span id="footerYear">2026</span> Lujos y Accesorios. Todos los derechos reservados.</p>
+                <p class="footer-credito">Creado por Andrés Felipe</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Flotante -->
+    <a href="tel:+573124692806" class="btn-llamar-mobile" aria-label="Llamar ahora" onclick="trackLlamadaClick()">
+        <span>📞</span>
+        <span>Llamar Ahora</span>
+    </a>
+
     <a href="https://wa.me/573124692806?text=Hola,%20me%20interesa%20cotizar%20repuestos%20para%20mi%20camión" 
        class="whatsapp-float" 
        target="_blank" 
        rel="noopener noreferrer"
-       aria-label="Contactar por WhatsApp">
+       aria-label="Contactar por WhatsApp"
+       onclick="trackWhatsAppClick('float')">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="32">
         <span class="whatsapp-tooltip">¿Necesitas ayuda? Escríbenos</span>
     </a>
 
-    <!-- Notificaciones -->
     <div class="notificacion" id="notificacion" role="alert" aria-live="polite">
         <span class="notificacion-icon" id="notifIcon">✓</span>
         <span class="notificacion-text" id="notifText">Mensaje</span>
     </div>
 
-    <!-- ANIMACIÓN DEL CAMIÓN -->
     <div id="animacionCamion" class="animacion-camion">
-        <img id="camionAnimado" src="" alt="Camión">
+        <div class="animacion-camion-contenido">
+            <div class="camion-escena">
+                <img id="camionAnimado" src="" alt="Camión">
+                <div class="carretera"></div>
+            </div>
+            <p class="animacion-camio5n-texto" id="animacionCamionTexto">Cargando tu marca...</p>
+        </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <canvas id="cursor-trail-canvas"></canvas>
+
+    <script>
+        // Registrar Service Worker para PWA (solo en HTTP/HTTPS, no en file://).
+        // La ruta es relativa para funcionar tambien en subdirectorios de
+        // GitHub Pages (usuario.github.io/repositorio/).
+        if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('[SW] Registrado, scope:', reg.scope))
+                    .catch(err => console.warn('[SW] No se pudo registrar:', err.message));
+            });
+        }
+    </script>
+
+<script src="js/config.js"></script>
+<script src="js/catalogo.js"></script>
+<script src="js/catalogo-extra.js"></script>
+<script src="js/rutas-productos.js"></script>
+<script src="js/tiktok-oembed.js"></script>
+<script src="js/app.js"></script>
+<!--
+    catalogo-pdf.js va DESPUES de app.js a proposito: usa el sistema de
+    tracking y el manejador de errores que define app.js (trackEvent,
+    trackWhatsAppClick, registerGlobal, ErrorHandler). Si se cargara antes,
+    el modulo no encontraria esas funciones.
+-->
+<script src="js/catalogo-pdf.js"></script>
+<!--
+    buscador-repuestos.js va DESPUES de app.js a proposito: filtra la lista
+    real del configurador (obtenerRepuestosActuales) y pinta con
+    crearElementoRepuesto(), ademas de reutilizar trackEvent y registerGlobal.
+-->
+<script src="js/buscador-repuestos.js"></script>
+    
 </body>
 </html>
