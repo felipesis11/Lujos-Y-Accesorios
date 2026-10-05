@@ -552,6 +552,31 @@ body.menu-abierto-activo {
    pasaba de ancho y el boton de telefono se salia por la derecha, dejando
    scroll horizontal en toda la pagina. Se deja que el logo encoja y no
    empuje al resto. No cambia el diseno, solo evita el desbordamiento. */
+@media (max-width: 640px) {
+    /* Cabecera minima en pantallas estrechas: logo + tema + menu.
+       Los botones de WhatsApp y llamada se ocultan porque ya existen
+       flotando (whatsapp-float, btn-llamar-mobile) y en el hero; asi
+       el menu hamburguesa siempre queda a la vista. */
+    .header-actions .btn-wa-header,
+    .header-actions .btn-phone-truck {
+        display: none;
+    }
+
+    .header-content {
+        gap: var(--space-xs);
+    }
+
+    .header-actions {
+        gap: var(--space-xs);
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    .btn-menu-movil {
+        flex-shrink: 0;
+    }
+}
+
 @media (max-width: 620px) {
     .logo {
         min-width: 0;
@@ -1178,6 +1203,14 @@ body.menu-abierto-activo {
 
     .hero-imagen {
         min-height: 250px;
+    }
+
+    /* En movil se apaga la decoracion pesada del hero (humo con blur,
+       capas de profundidad): es lo que volvia lento el scroll y no aporta
+       a la conversion. Quedan la foto del camion, el titulo y los botones. */
+    .hero-smoke,
+    .hero-depth-layer {
+        display: none;
     }
 
     .hero-truck-container {

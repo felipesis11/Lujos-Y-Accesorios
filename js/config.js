@@ -178,7 +178,7 @@ const ANALYTICS_CONFIG = {
      * Formato: G-XXXXXXXXXX
      * Mientras sea 'G-XXXXXXXXXX' el script NO se carga (no genera ruido).
      */
-    measurementId: 'G-XXXXXXXXXX',
+    measurementId: 'G-7S1P870EV5',
 
     // Eventos que se envian a GA4
     events: {

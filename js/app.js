@@ -707,6 +707,13 @@ document.addEventListener('DOMContentLoaded', ErrorHandler.safeHandler(() => {
         catch (e) { ErrorHandler.handleError(e, { critical: true, initPhase: name }); }
     });
     
+    // Efectos pesados (particulas, parallax, tilt, estela del cursor)
+    // que en celulares vuelven lento el scroll del hero. En movil o con
+    // "reducir movimiento" se omiten: el contenido queda identico.
+    const movimientoReducido = window.matchMedia &&
+        (window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+         window.matchMedia('(max-width: 768px)').matches);
+
     // Inicialización no crítica (fallos no rompen la app)
     const nonCritical = [
         { fn: inicializarRecomendados, name: 'recomendados' },
@@ -718,17 +725,18 @@ document.addEventListener('DOMContentLoaded', ErrorHandler.safeHandler(() => {
         { fn: CatalogoPdf.init, name: 'catalogoPdf' },
         { fn: initRedesSociales, name: 'redesSociales' },
         { fn: initScrollReveal, name: 'scrollReveal' },
-        { fn: initCardTilt, name: 'cardTilt' },
-        { fn: initHeroTruckTilt, name: 'heroTilt' },
-        { fn: initParticles, name: 'particles' },
+        { fn: initCardTilt, name: 'cardTilt', pesado: true },
+        { fn: initHeroTruckTilt, name: 'heroTilt', pesado: true },
+        { fn: initParticles, name: 'particles', pesado: true },
         { fn: initCounters, name: 'counters' },
-        { fn: initHeroParallax, name: 'heroParallax' },
+        { fn: initHeroParallax, name: 'heroParallax', pesado: true },
         { fn: initBeforeAfterSliders, name: 'beforeAfter' },
-        { fn: initAntesDespuesParallax, name: 'parallax' },
-        { fn: initCursorTrail, name: 'cursorTrail' }
+        { fn: initAntesDespuesParallax, name: 'parallax', pesado: true },
+        { fn: initCursorTrail, name: 'cursorTrail', pesado: true }
     ];
-    
-    nonCritical.forEach(({ fn, name }) => {
+
+    nonCritical.forEach(({ fn, name, pesado }) => {
+        if (pesado && movimientoReducido) return;
         try { fn(); } 
         catch (e) { ErrorHandler.handleError(e, { initPhase: name }); }
     });

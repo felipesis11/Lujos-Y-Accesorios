@@ -9,7 +9,7 @@
 //    cachea cada recurso por separado con cache.add() envuelto en su propio
 //    try/catch: un 404 en una fuente ya no impide instalar el service worker.
 
-const CACHE_NAME = 'lujos-y-accesorios-v7';
+const CACHE_NAME = 'lujos-y-accesorios-v9';
 const CACHE_PREFIX = 'luja-';
 
 // Solo recursos del propio sitio. Las fuentes externas se cachean aparte.
