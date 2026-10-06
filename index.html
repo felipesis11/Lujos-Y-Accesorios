@@ -70,7 +70,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Version ?v=10 en CSS/JS propios: obliga al navegador y al Service
+         Worker a traer los archivos nuevos en cada publicacion. Al publicar
+         cambios de diseño o codigo, subir este numero en index.html y en
+         sw.js (STATIC_ASSETS). -->
+    <link rel="stylesheet" href="css/styles.css?v=10">
 
     <!-- ============ DATOS ESTRUCTURADOS (JSON-LD) ============
          Solo datos REALES confirmados por el negocio.
@@ -1285,25 +1289,25 @@
         }
     </script>
 
-<script src="js/config.js"></script>
-<script src="js/catalogo.js"></script>
-<script src="js/catalogo-extra.js"></script>
-<script src="js/rutas-productos.js"></script>
-<script src="js/tiktok-oembed.js"></script>
-<script src="js/app.js"></script>
+<script src="js/config.js?v=10"></script>
+<script src="js/catalogo.js?v=10"></script>
+<script src="js/catalogo-extra.js?v=10"></script>
+<script src="js/rutas-productos.js?v=10"></script>
+<script src="js/tiktok-oembed.js?v=10"></script>
+<script src="js/app.js?v=10"></script>
 <!--
     catalogo-pdf.js va DESPUES de app.js a proposito: usa el sistema de
     tracking y el manejador de errores que define app.js (trackEvent,
     trackWhatsAppClick, registerGlobal, ErrorHandler). Si se cargara antes,
     el modulo no encontraria esas funciones.
 -->
-<script src="js/catalogo-pdf.js"></script>
+<script src="js/catalogo-pdf.js?v=10"></script>
 <!--
     buscador-repuestos.js va DESPUES de app.js a proposito: filtra la lista
     real del configurador (obtenerRepuestosActuales) y pinta con
     crearElementoRepuesto(), ademas de reutilizar trackEvent y registerGlobal.
 -->
-<script src="js/buscador-repuestos.js"></script>
+<script src="js/buscador-repuestos.js?v=10"></script>
     
 </body>
 </html>

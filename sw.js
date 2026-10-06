@@ -9,23 +9,25 @@
 //    cachea cada recurso por separado con cache.add() envuelto en su propio
 //    try/catch: un 404 en una fuente ya no impide instalar el service worker.
 
-const CACHE_NAME = 'lujos-y-accesorios-v9';
-const CACHE_PREFIX = 'luja-';
+const CACHE_NAME = 'lujos-y-accesorios-v10';
+const CACHE_PREFIX = 'lujos-y-accesorios-';
 
 // Solo recursos del propio sitio. Las fuentes externas se cachean aparte.
+// Las URLs llevan ?v=10 igual que en index.html: asi cada publicacion
+// trae archivos frescos en vez del cache viejo.
 const STATIC_ASSETS = [
   './',
   'index.html',
-  'css/styles.css',
+  'css/styles.css?v=10',
   'css/paginas.css',
-  'js/config.js',
-  'js/app.js',
-  'js/catalogo.js',
-  'js/catalogo-extra.js',
-  'js/rutas-productos.js',
-  'js/tiktok-oembed.js',
-  'js/catalogo-pdf.js',
-  'js/buscador-repuestos.js',
+  'js/config.js?v=10',
+  'js/app.js?v=10',
+  'js/catalogo.js?v=10',
+  'js/catalogo-extra.js?v=10',
+  'js/rutas-productos.js?v=10',
+  'js/tiktok-oembed.js?v=10',
+  'js/catalogo-pdf.js?v=10',
+  'js/buscador-repuestos.js?v=10',
   'sonido al seleccionar marcas/encendido de camion.mp3',
   'manifest.json',
   'img/favicon.png',
