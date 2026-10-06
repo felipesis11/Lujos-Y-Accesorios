@@ -2410,6 +2410,11 @@ function initMenuMovil() {
         btn.setAttribute('aria-expanded', 'false');
         btn.setAttribute('aria-label', 'Abrir menú de navegación');
         document.body.classList.remove('menu-abierto-activo');
+        const overlay = document.getElementById('navOverlay');
+        if (overlay) {
+            overlay.classList.remove('abierto');
+            overlay.hidden = true;
+        }
     };
 
     const abrirMenu = () => {
@@ -2418,6 +2423,18 @@ function initMenuMovil() {
         btn.setAttribute('aria-expanded', 'true');
         btn.setAttribute('aria-label', 'Cerrar menú de navegación');
         document.body.classList.add('menu-abierto-activo');
+        const overlay = document.getElementById('navOverlay');
+        if (overlay) {
+            overlay.hidden = false;
+            // Reflow forzado: el navegador pinta el elemento visible y la
+            // transicion de opacidad corre sin depender de requestAnimationFrame
+            // (que en algunos navegadores no dispara si la pestaña no pinta).
+            void overlay.offsetWidth;
+            overlay.classList.add('abierto');
+        }
+        // Foco al primer enlace para navegacion con teclado.
+        const primero = nav.querySelector('a.nav-link');
+        if (primero) primero.focus({ preventScroll: true });
     };
 
     btn.addEventListener('click', () => {
@@ -2435,6 +2452,21 @@ function initMenuMovil() {
         });
     });
 
+    // Cerrar con la X del drawer (solo visible en movil)
+    const btnCerrar = document.getElementById('btnCerrarMenu');
+    if (btnCerrar) {
+        btnCerrar.addEventListener('click', () => {
+            cerrarMenu();
+            btn.focus();
+        });
+    }
+
+    // Cerrar al tocar el fondo oscuro
+    const overlay = document.getElementById('navOverlay');
+    if (overlay) {
+        overlay.addEventListener('click', () => cerrarMenu());
+    }
+
     // Cerrar con Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && nav.classList.contains('nav-abierto')) {
@@ -2450,8 +2482,8 @@ function initMenuMovil() {
         cerrarMenu();
     });
 
-    // Cerrar si se vuelve a escritorio
-    const mq = window.matchMedia('(min-width: 1024px)');
+    // Cerrar si se vuelve a escritorio (el drawer solo existe hasta 1150px)
+    const mq = window.matchMedia('(min-width: 1151px)');
     const onChange = (e) => { if (e.matches) cerrarMenu(); };
     if (mq.addEventListener) {
         mq.addEventListener('change', onChange);

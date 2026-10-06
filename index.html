@@ -213,6 +213,10 @@
             </button>
 
             <nav class="nav-principal" id="navPrincipal" aria-label="Navegación principal">
+                <div class="nav-drawer-head">
+                    <strong>Lujos y Accesorios</strong>
+                    <button type="button" class="nav-cerrar" id="btnCerrarMenu" aria-label="Cerrar menú de navegación">×</button>
+                </div>
                 <ul>
                 <li><a href="#inicio" class="nav-link nav-link-activo" data-seccion="inicio" data-nombre="Inicio">Inicio</a></li>
                     <li><a href="#recomendados" class="nav-link" data-seccion="recomendados" data-nombre="Productos">Productos</a></li>
@@ -225,7 +229,15 @@
                 <li><a href="#faq" class="nav-link" data-seccion="faq" data-nombre="FAQ">FAQ</a></li>
                 <li><a href="#ubicacion" class="nav-link" data-seccion="ubicacion" data-nombre="Contacto">Contacto</a></li>
                 </ul>
+                <!-- Enlaces extra solo visibles en el panel movil -->
+                <div class="nav-extra" aria-label="Accesos directos">
+                    <a href="#confianza" class="nav-link" data-seccion="confianza" data-nombre="Nosotros">Nosotros</a>
+                    <a href="https://www.instagram.com/lujosyaccesorioscamiones" target="_blank" rel="noopener noreferrer" class="nav-link nav-social" onclick="trackSocialClick('instagram')">📷 Instagram</a>
+                    <a href="https://wa.me/573124692806?text=Hola%2C%20quiero%20cotizar%20repuestos%20para%20mi%20camion" target="_blank" rel="noopener noreferrer" class="nav-link nav-social" onclick="trackWhatsAppClick('menu')">📱 WhatsApp</a>
+                    <a href="https://maps.app.goo.gl/6jB4HeUk5NPbDvGt6" target="_blank" rel="noopener noreferrer" class="nav-link nav-social" onclick="trackMapsClick()">📍 Cómo llegar</a>
+                </div>
             </nav>
+            <div class="nav-overlay" id="navOverlay" hidden></div>
 
             <div class="header-actions">
                 <button class="btn-tema" id="btnTema" onclick="toggleTema()" aria-label="Cambiar modo oscuro/claro">

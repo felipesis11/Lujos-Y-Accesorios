@@ -86,6 +86,12 @@ html[data-theme="dark"] select option {
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    /* Fondo raiz del color de marca: si el navegador revela area fuera
+       de la pagina (zoom-out, rebote), no sale una franja blanca. */
+    background-color: #0b1f3a;
+    /* Corta cualquier desborde horizontal (drawers fuera de pantalla,
+       marquees, decoraciones). 'clip' no rompe el sticky como 'hidden'. */
+    overflow-x: clip;
 }
 
 body {
@@ -95,6 +101,8 @@ body {
     background-color: var(--color-gray-50);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Corta cualquier desborde horizontal sin romper el sticky */
+    overflow-x: clip;
 }
 
 img {
@@ -370,6 +378,12 @@ header {
     transition: color var(--transition-fast), background var(--transition-fast);
 }
 
+/* Cabecera del drawer y enlaces extra: solo existen en movil */
+.nav-drawer-head,
+.nav-extra {
+    display: none;
+}
+
 .nav-principal .nav-link:hover,
 .nav-principal .nav-link:focus-visible {
     color: white;
@@ -476,26 +490,32 @@ body.menu-abierto-activo {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1150px) {
     .btn-menu-movil {
         display: flex;
     }
 
+    /* Drawer lateral derecho: panel de 75-85% con fondo detras.
+       Animacion solo de transform+opacidad (barata en movil). */
     .nav-principal {
         position: fixed;
         top: 0;
-        left: 0;
         right: 0;
         bottom: 0;
-        z-index: 99;
-        display: block;
+        left: auto;
+        width: min(85%, 400px);
+        z-index: 101;
+        display: flex;
+        flex-direction: column;
         background: linear-gradient(160deg, #0b1f3a 0%, #132c4d 100%);
-        padding: 5.5rem 1.5rem 2rem;
+        box-shadow: -12px 0 40px rgba(0, 0, 0, 0.45);
+        padding: 0 0 2rem;
         overflow-y: auto;
+        overscroll-behavior: contain;
         opacity: 0;
         visibility: hidden;
-        transform: translateX(-100%);
-        transition: transform var(--transition-base), opacity var(--transition-base), visibility var(--transition-base);
+        transform: translateX(105%);
+        transition: transform 0.28s ease, opacity 0.28s ease, visibility 0.28s;
     }
 
     .nav-principal.nav-abierto {
@@ -507,16 +527,20 @@ body.menu-abierto-activo {
     .nav-principal ul {
         flex-direction: column;
         align-items: stretch;
-        gap: 0.4rem;
+        gap: 0.35rem;
+        padding: 0 1.1rem;
     }
 
     .nav-principal .nav-link {
-        padding: 1rem 1.1rem;
-        font-size: 1.05rem;
+        padding: 0.85rem 1rem;
+        font-size: 1rem;
         font-weight: 600;
         border-radius: var(--radius-md);
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(255, 255, 255, 0.08);
+        min-height: 48px;
+        display: flex;
+        align-items: center;
     }
 
     .nav-principal .nav-link:hover,
@@ -530,6 +554,77 @@ body.menu-abierto-activo {
     }
 
     .nav-principal .nav-link-activo::after {
+        display: none;
+    }
+
+    /* Cabecera del drawer con boton X */
+    .nav-drawer-head {
+        display: flex;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.1rem;
+        color: #fff;
+        font-weight: 700;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 0.8rem;
+        position: sticky;
+        top: 0;
+        background: inherit;
+        z-index: 1;
+    }
+
+    .nav-cerrar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .nav-cerrar:hover {
+        background: rgba(196, 22, 28, 0.5);
+    }
+
+    /* Enlaces extra del drawer (Nosotros + contacto directo) */
+    .nav-extra {
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        padding: 0.8rem 1.1rem 0;
+        margin-top: 0.8rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Fondo oscuro detras del drawer; tocarlo cierra */
+    .nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.55);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, visibility 0.25s;
+    }
+
+    .nav-overlay.abierto {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-overlay[hidden] {
+        display: none;
+    }
+
+    /* Con el menu abierto los flotantes no estorban */
+    body.menu-abierto-activo .whatsapp-float,
+    body.menu-abierto-activo .btn-llamar-mobile {
         display: none;
     }
 
@@ -728,12 +823,21 @@ body.menu-abierto-activo {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background: 
+    background:
         linear-gradient(135deg, rgba(11, 31, 58, 0.25) 0%, rgba(26, 58, 92, 0.2) 100%),
         url('../img/hero/camion-fondo.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    /* Fondo liviano en movil: 71 KB en vez de 222 KB */
+    .hero-bg {
+        background-image:
+            linear-gradient(135deg, rgba(11, 31, 58, 0.25) 0%, rgba(26, 58, 92, 0.2) 100%),
+            url('../img/hero/camion-fondo-movil.jpg');
+    }
 }
 
 .hero-bg::after {
@@ -4054,7 +4158,7 @@ footer {
 
 .camion-escena {
     position: relative;
-    width: 100vw;
+    width: 100%;
     max-width: none;
     height: 280px;
     overflow: hidden;
@@ -4355,12 +4459,305 @@ html:not(.js-loaded) [data-reveal="fade-up"] {
     animation-delay: 2s;
 }
 
+  @media (max-width: 768px) {
+      .hero-depth-layer {
+          font-size: 3rem;
+          opacity: 0.04;
+      }
+      .hero-depth-layer-1 { top: 5%; left: 3%; }
+      .hero-depth-layer-2 { bottom: 10%; right: 5%; }
+      .hero-depth-layer-3 { top: 50%; left: 50%; }
+  }
+
+/* ============================================
+   OPTIMIZACION MOBILE (rendimiento + layout)
+   ============================================
+   Va al final a proposito: gana los empates de especificidad con las
+   reglas generales de arriba. Solo afecta a pantallas pequeñas; el
+   escritorio queda intacto.
+   ============================================ */
+
 @media (max-width: 768px) {
-    .hero-depth-layer {
-        font-size: 3rem;
-        opacity: 0.04;
+    /* Hero compacto: sin fondo fijo (es lo que mas trababa el scroll),
+       sin blur en la tarjeta del titulo y sin animaciones infinitas.
+       Quedan la foto, el titulo y los botones, mismo contenido. */
+    .hero {
+        min-height: auto;
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-xl);
     }
-    .hero-depth-layer-1 { top: 5%; left: 3%; }
-    .hero-depth-layer-2 { bottom: 10%; right: 5%; }
-    .hero-depth-layer-3 { top: 50%; left: 50%; }
+
+    .hero-bg {
+        background-attachment: scroll;
+    }
+
+    .hero-titulo-wrapper {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(11, 31, 58, 0.88);
+        box-shadow: none;
+    }
+
+    .titulo-line,
+    .titulo-y,
+    .decor-star {
+        animation: none;
+    }
+
+    /* Orden de lectura en movil: titulo -> botones -> telefono -> sellos */
+    .hero-texto {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-titulo-wrapper { order: 1; }
+    .hero-buttons { order: 2; }
+    .hero-phone { order: 3; }
+    .hero-badges { order: 4; }
+
+    .hero-imagen {
+        min-height: 0;
+    }
+
+    .hero-truck-img {
+        max-height: 230px;
+        width: auto;
+        max-width: 100%;
+    }
+
+    /* Flotantes compactos, separados de los bordes y del notch */
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        right: 14px;
+        bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .whatsapp-float img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .btn-llamar-mobile {
+        left: 14px;
+        bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        max-width: calc(100vw - 100px);
+    }
+}
+
+/* Sin tooltip en tactil: solo existe para hover con mouse */
+@media (hover: none) {
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Cabecera solida en movil: el blur fijo repinta en cada frame
+       del scroll. Mismo color de marca, sin costo. */
+    header {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: #0b1f3a;
+    }
+}
+
+@media (max-width: 390px) {
+    .logo-icon {
+        font-size: 1.6rem;
+    }
+
+    .logo-text .logo-title-ola {
+        font-size: 1rem;
+    }
+
+    .logo-text small {
+        font-size: 0.62rem;
+    }
+
+    .btn-tema {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero-titulo {
+        font-size: clamp(1.9rem, 11vw, 2.5rem);
+    }
+
+    .hero-phone .btn-phone-truck {
+        gap: 8px;
+        padding: 6px 14px 6px 6px;
+        max-width: 100%;
+    }
+
+    .phone-truck-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .phone-truck-text strong {
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+}
+
+/* ============================================
+   MOVIL COMPACTO (menos scroll, todo visible)
+   ============================================
+   En pantallas pequeñas todo se veia gigante y tocaba deslizar mucho:
+   se compactan paddings, tarjetas y grillas a 2 columnas donde la
+   lectura lo permite. Escritorio intacto.
+   ============================================ */
+
+@media (max-width: 768px) {
+    section {
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-lg);
+    }
+
+    .section-header {
+        margin-bottom: var(--space-md);
+    }
+
+    .section-header h2 {
+        font-size: clamp(1.4rem, 6vw, 1.75rem);
+    }
+
+    .section-header p {
+        font-size: 0.9rem;
+    }
+
+    /* Marcas y categorias en 2 columnas compactas */
+    .grid-marcas,
+    .categorias-grid,
+    .tiktok-grid,
+    .confianza-grid,
+    .social-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-sm);
+    }
+
+    .marca-image {
+        height: 130px;
+    }
+
+    .marca-info {
+        padding: var(--space-sm) var(--space-xs);
+    }
+
+    .marca-info h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .modelos-tags {
+        gap: 0.25rem;
+    }
+
+    .modelos-tags span {
+        font-size: 0.68rem;
+        padding: 0.15rem 0.5rem;
+    }
+
+    .categoria-img {
+        height: 90px;
+    }
+
+    .categoria-info {
+        padding: var(--space-xs) var(--space-sm) var(--space-sm);
+    }
+
+    .categoria-info strong {
+        font-size: 0.88rem;
+    }
+
+    .categoria-info small {
+        font-size: 0.76rem;
+    }
+
+    .confianza-card,
+    .social-card {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .confianza-icono,
+    .social-icono {
+        font-size: 1.8rem;
+    }
+
+    .confianza-card h3,
+    .social-card strong {
+        font-size: 0.92rem;
+    }
+
+    .confianza-card p,
+    .social-card small {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .grid-marcas,
+    .categorias-grid {
+        gap: 0.6rem;
+    }
+
+    .marca-image {
+        height: 110px;
+    }
+}
+
+/* ============================================
+   CABECERA COMPACTA (portatiles estrechos)
+   ============================================
+   Va al final a proposito: con igual especificidad gana por orden a
+   las reglas base del logo y del menu. Con 10 enlaces el menu no cabe
+   junto al logo animado: se compacta logo, acciones y enlaces para que
+   todo quede en una sola fila. Debajo de 1150px entra el drawer movil.
+   Sin renombrar nada.
+   ============================================ */
+@media (max-width: 1400px) {
+    .logo-icon {
+        font-size: 1.8rem;
+    }
+
+    .logo-text .logo-title-ola {
+        font-size: 1.35rem;
+    }
+
+    .logo-text small {
+        font-size: 0.62rem;
+    }
+
+    .header-actions .btn-phone-truck .phone-truck-text,
+    .btn-wa-header span:not([aria-hidden]) {
+        display: none;
+    }
+
+    .header-actions .btn-phone-truck {
+        padding: 6px;
+    }
+
+    .btn-wa-header {
+        padding: 0.6rem 0.75rem;
+    }
+
+    .nav-principal ul {
+        gap: 0;
+    }
+
+    .nav-principal .nav-link {
+        padding: 0.4rem 0.45rem;
+        font-size: 0.78rem;
+    }
+
+    .header-content {
+        gap: var(--space-xs);
+        max-width: 1400px;
+        padding-left: var(--space-sm);
+        padding-right: var(--space-sm);
+    }
 }
